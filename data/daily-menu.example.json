@@ -1,0 +1,12 @@
+{
+  "available": true,
+  "date": "2026-09-24",
+  "price": 12.5,
+  "days": "De lunes a viernes, al mediodía",
+  "courses": [
+    { "name": "Primeros", "dishes": ["Caldo gallego", "Ensalada mixta", "Empanada de bonito"] },
+    { "name": "Segundos", "dishes": ["Lacón con grelos", "Merluza a la gallega", "Churrasco con patatas"] },
+    { "name": "Postres", "dishes": ["Filloas", "Tarta de Santiago", "Fruta del tiempo"] }
+  ],
+  "includes": ["Pan", "Bebida", "Postre o café"]
+}

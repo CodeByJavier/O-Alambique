@@ -1,0 +1,158 @@
+@keyframes spin {
+  to { rotate: 360deg; }
+}
+
+@keyframes pulse-ring {
+  0% { scale: 1; opacity: 0.7; }
+  100% { scale: 2.8; opacity: 0; }
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes shake {
+  0%, 100% { translate: 0 0; }
+  25% { translate: -4px 0; }
+  75% { translate: 4px 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; translate: 0 1.5rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; scale: 0.92; }
+  to { opacity: 1; scale: 1; }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes bounce-pin {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@keyframes nav-item-in {
+  from { opacity: 0; translate: 0 1rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes swing {
+  0%, 100% { rotate: -3deg; }
+  50% { rotate: 3deg; }
+}
+
+@keyframes flicker {
+  0%, 100% { filter: drop-shadow(0 0 14px rgb(255 190 90 / 0.55)); }
+  47% { filter: drop-shadow(0 0 14px rgb(255 190 90 / 0.55)); }
+  48% { filter: drop-shadow(0 0 4px rgb(255 190 90 / 0.2)); }
+  50% { filter: drop-shadow(0 0 18px rgb(255 190 90 / 0.7)); }
+}
+
+@keyframes hero-reveal {
+  from { opacity: 0; filter: blur(6px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes hero-parallax {
+  to { translate: 0 18%; }
+}
+
+@keyframes grow-x {
+  to { scale: 1 1; }
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; translate: 0 2rem; scale: 0.96; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada del hero */
+  .hero__image {
+    animation: hero-reveal 1.2s var(--ease-out) both;
+  }
+
+  .hero__content > * {
+    animation: fade-up 900ms var(--ease-out) both;
+  }
+
+  .hero__content > :nth-child(1) { animation-delay: 150ms; }
+  .hero__content > :nth-child(2) { animation-delay: 280ms; }
+  .hero__content > :nth-child(3) { animation-delay: 420ms; }
+  .hero__content > :nth-child(4) { animation-delay: 540ms; }
+  .hero__content > :nth-child(5) { animation-delay: 660ms; }
+
+  .bulb {
+    animation: swing 5s ease-in-out infinite, flicker 7s linear infinite;
+  }
+
+  .bulb--2 { animation-duration: 6.5s, 9s; animation-delay: -1.5s, -3s; }
+  .bulb--3 { animation-duration: 4.5s, 11s; animation-delay: -0.8s, -6s; }
+
+  /* Aparición al hacer scroll (la clase .js-reveal la añade JS, así sin JS todo es visible) */
+  .js-reveal [data-reveal] {
+    transition:
+      opacity var(--duration-slow) var(--ease-out),
+      translate var(--duration-slow) var(--ease-out);
+    transition-delay: calc(var(--reveal-index, 0) * 90ms);
+  }
+
+  .js-reveal [data-reveal]:not(.is-visible) {
+    opacity: 0;
+    translate: 0 2.5rem;
+  }
+
+  .dialog[open] {
+    animation: dialog-in 420ms var(--ease-out);
+  }
+
+  /* Barra de progreso y parallax con animaciones ligadas al scroll (mejora progresiva) */
+  @supports (animation-timeline: scroll()) {
+    .scroll-progress {
+      position: absolute;
+      inset: auto 0 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-wood), var(--color-accent));
+      transform-origin: 0 50%;
+      scale: 0 1;
+      animation: grow-x linear both;
+      animation-timeline: scroll(root block);
+    }
+
+    .hero__media {
+      animation: hero-parallax linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100vh;
+    }
+  }
+
+  /* Transición suave entre pestañas de la carta */
+  ::view-transition-old(menu-panel) {
+    animation: 220ms var(--ease-out) both fade-out-down;
+  }
+
+  ::view-transition-new(menu-panel) {
+    animation: 380ms var(--ease-out) both fade-up;
+  }
+}
+
+@keyframes fade-out-down {
+  to { opacity: 0; translate: 0 -0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

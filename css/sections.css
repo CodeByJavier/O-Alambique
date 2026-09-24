@@ -1,0 +1,810 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  /* Alto limitado para no ampliar en exceso una foto panorámica */
+  min-height: min(100vh, 44rem);
+  min-height: min(100svh, 44rem);
+  padding-block: calc(var(--header-height) + var(--space-xl)) var(--space-2xl);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__media,
+.hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__image {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(20 17 16 / 0.72) 0%, rgb(20 17 16 / 0.66) 50%, rgb(20 17 16 / 0.82) 85%, var(--color-bg) 100%),
+    radial-gradient(ellipse at 80% 20%, rgb(227 167 63 / 0.18), transparent 60%);
+}
+
+.hero__content {
+  max-width: var(--container);
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-m);
+  padding: 0.3rem 0.9rem;
+  border: 1px solid rgb(227 167 63 / 0.6);
+  border-radius: var(--radius-pill);
+  background: rgb(227 167 63 / 0.12);
+  color: var(--color-accent-strong);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.hero__title-brand {
+  font-family: var(--font-script);
+  font-size: var(--fs-800);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-shadow: 0 4px 30px rgb(0 0 0 / 0.6);
+}
+
+.hero__title-sub {
+  color: var(--color-accent);
+  font-size: var(--fs-600);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__lead {
+  max-width: 34rem;
+  margin-top: var(--space-l);
+  color: var(--color-text);
+  font-size: var(--fs-500);
+  line-height: 1.5;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-xl);
+}
+
+.status-pill--hero {
+  margin-top: var(--space-l);
+}
+
+@media (min-width: 37.5em) {
+  .status-pill--hero {
+    display: none;
+  }
+}
+
+.lamps {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .hero {
+    min-height: clamp(36rem, 48vw, 100svh);
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(90deg, rgb(20 17 16 / 0.95) 0%, rgb(20 17 16 / 0.8) 38%, rgb(20 17 16 / 0.2) 75%, rgb(20 17 16 / 0.45) 100%),
+      linear-gradient(180deg, transparent 70%, var(--color-bg) 100%);
+  }
+
+  .lamps {
+    position: absolute;
+    inset: 0  auto  auto 5%;
+    display: flex;
+    gap: 1.75rem;
+    pointer-events: none;
+  }
+}
+
+/* Bombillas Edison decorativas (como las del cartel y las lámparas del local) */
+.bulb {
+  --bulb-glow: #ffc56b;
+
+  width: 3rem;
+  height: 7.5rem;
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 0 14px rgb(255 190 90 / 0.55));
+}
+
+.bulb--2 {
+  height: 10.5rem;
+  width: 3.4rem;
+}
+
+.bulb--3 {
+  height: 6rem;
+  width: 2.6rem;
+}
+
+.bulb__wire {
+  fill: none;
+  stroke: #5b4c3e;
+  stroke-width: 1.5;
+}
+
+.bulb__cap {
+  fill: #3b3027;
+  stroke: #8a6a45;
+  stroke-width: 1.5;
+}
+
+.bulb__glass {
+  fill: var(--bulb-glow);
+  fill-opacity: 0.28;
+  stroke: #ffd79a;
+  stroke-width: 1.2;
+}
+
+.bulb__cage {
+  fill: none;
+  stroke: #8a6a45;
+  stroke-width: 1.4;
+}
+
+.bulb__filament {
+  fill: none;
+  stroke: #fff1c9;
+  stroke-width: 1.6;
+}
+
+/* ---------- Nosotros ---------- */
+.about__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.about__intro > p:not(.eyebrow) {
+  margin-top: var(--space-l);
+  color: var(--color-text-muted);
+  font-size: var(--fs-500);
+}
+
+.features {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.feature {
+  padding: var(--space-l);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  transition: border-color var(--duration) ease, translate var(--duration) var(--ease-out);
+}
+
+.feature:hover {
+  border-color: rgb(227 167 63 / 0.45);
+  translate: 0 -3px;
+}
+
+.feature__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: var(--space-m);
+  padding: 0.45rem;
+  border-radius: var(--radius-s);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.feature__title {
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+}
+
+.feature__text {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+@media (min-width: 40em) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60em) {
+  .about__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-3xl);
+  }
+}
+
+/* ---------- Carta ---------- */
+.menu__footer {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-m);
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.menu__note {
+  max-width: 32rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+/* ---------- Menú del día ---------- */
+.daily-menu__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.daily-card {
+  position: relative;
+  min-height: 18rem;
+  padding: var(--space-xl);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(ellipse at top right, rgb(227 167 63 / 0.1), transparent 55%),
+    var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.daily-card::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px dashed rgb(227 167 63 / 0.25);
+  border-radius: calc(var(--radius-l) - 0.4rem);
+  pointer-events: none;
+}
+
+.daily-card__state {
+  position: relative;
+  animation: fade-up var(--duration-slow) var(--ease-out) both;
+}
+
+.daily-card__state--message {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-m);
+  padding-block: var(--space-l);
+  text-align: center;
+}
+
+.daily-card__state--message .icon--xl:not(.icon--danger) {
+  color: var(--color-accent);
+}
+
+.daily-card__state--message p {
+  max-width: 28rem;
+  color: var(--color-text-muted);
+}
+
+.daily-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+.daily-card__title {
+  font-size: var(--fs-600);
+  text-transform: uppercase;
+}
+
+.daily-card__price {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-600);
+  font-weight: 600;
+}
+
+.daily-card__meta {
+  margin-top: var(--space-2xs);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.daily-card__courses {
+  display: grid;
+  gap: var(--space-l);
+  margin-top: var(--space-l);
+}
+
+.daily-course__title {
+  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
+  font-family: var(--font-script);
+  font-size: var(--fs-500);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.daily-course__list {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-left: 1.1rem;
+}
+
+.daily-course__list li::marker {
+  color: var(--color-accent);
+}
+
+.daily-card__includes {
+  margin-top: var(--space-l);
+  padding-top: var(--space-m);
+  border-top: 1px dashed var(--color-line-strong);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.daily-card__includes:empty {
+  display: none;
+}
+
+.daily-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-s);
+}
+
+.daily-card__noscript {
+  text-align: center;
+}
+
+@media (min-width: 60em) {
+  .daily-menu__grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-3xl);
+  }
+
+  .daily-card__courses {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+
+/* ---------- Horario ---------- */
+.schedule__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.schedule-card {
+  padding: var(--space-s) var(--space-l);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-500);
+}
+
+.schedule-table tr {
+  border-bottom: 1px solid var(--color-line);
+  transition: background-color var(--duration) ease;
+}
+
+.schedule-table tr:last-child {
+  border-bottom: 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: var(--space-m) var(--space-xs);
+}
+
+.schedule-table th {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: start;
+  text-transform: uppercase;
+}
+
+.schedule-table td {
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+.schedule-table tr.is-closed td {
+  color: var(--color-danger);
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.schedule-table tr.is-today {
+  position: relative;
+  background: var(--color-accent-soft);
+}
+
+.schedule-table tr.is-today th {
+  color: var(--color-accent);
+}
+
+.schedule-table tr.is-today th::after {
+  content: "Hoy";
+  margin-inline-start: var(--space-xs);
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.7rem;
+  vertical-align: middle;
+}
+
+@media (min-width: 60em) {
+  .schedule__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-3xl);
+  }
+}
+
+/* ---------- Para llevar ---------- */
+.takeaway {
+  padding-block: var(--space-2xl);
+}
+
+.takeaway__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-l);
+  padding: var(--space-xl);
+  border: 1px solid rgb(227 167 63 / 0.35);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(ellipse at 0% 0%, rgb(184 115 47 / 0.35), transparent 60%),
+    linear-gradient(135deg, #2a1e14, var(--color-surface));
+  text-align: center;
+}
+
+.takeaway__icons {
+  display: flex;
+  gap: var(--space-s);
+  color: var(--color-accent);
+}
+
+.takeaway__text p {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 60em) {
+  .takeaway__inner {
+    grid-template-columns: auto 1fr auto;
+    justify-items: start;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-2xl);
+    text-align: start;
+  }
+}
+
+/* ---------- Reservas ---------- */
+.reservation__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.reservation__alt {
+  display: grid;
+  gap: var(--space-s);
+  margin-top: var(--space-xl);
+}
+
+.reservation__alt li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  color: var(--color-text-muted);
+}
+
+.reservation__alt .icon {
+  color: var(--color-accent);
+}
+
+.form-card {
+  padding: var(--space-xl) var(--space-l);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.form-card__noscript {
+  margin-bottom: var(--space-l);
+  padding: var(--space-m);
+  border-radius: var(--radius-s);
+  background: var(--color-accent-soft);
+}
+
+.form-success {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-m);
+  padding-block: var(--space-xl);
+  text-align: center;
+  animation: pop-in var(--duration-slow) var(--ease-spring) both;
+}
+
+.form-success:focus {
+  outline: none;
+}
+
+.form-success__icon {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.form-success__icon .icon {
+  stroke-width: 2.5;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: draw 600ms 250ms var(--ease-out) forwards;
+}
+
+.form-success__title {
+  font-size: var(--fs-600);
+  text-transform: uppercase;
+}
+
+.form-success p {
+  max-width: 30rem;
+  color: var(--color-text-muted);
+}
+
+.form-success__fallback {
+  font-size: var(--fs-300);
+}
+
+@media (min-width: 40em) {
+  .form-card {
+    padding: var(--space-2xl);
+  }
+}
+
+@media (min-width: 60em) {
+  .reservation__grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-3xl);
+  }
+
+  .reservation .section-header {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-xl));
+  }
+}
+
+/* ---------- Contacto y mapa ---------- */
+.contact__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.contact-list {
+  display: grid;
+  gap: var(--space-m);
+  margin-block: var(--space-xl);
+}
+
+.contact-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  font-size: var(--fs-500);
+}
+
+.contact-list__item .icon {
+  margin-top: 0.2em;
+  color: var(--color-accent);
+}
+
+.contact-list a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  color: var(--color-accent);
+}
+
+.map {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-l);
+  background:
+    repeating-linear-gradient(45deg, rgb(243 233 215 / 0.03) 0 12px, transparent 12px 24px),
+    var(--color-surface);
+  overflow: hidden;
+}
+
+.map__placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-m);
+  padding: var(--space-xl);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.map__placeholder > .icon {
+  color: var(--color-accent);
+  animation: bounce-pin 2.4s var(--ease-out) infinite;
+}
+
+.map__placeholder p {
+  max-width: 24rem;
+  font-size: var(--fs-300);
+}
+
+.map__error {
+  color: var(--color-danger);
+}
+
+.map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.4) contrast(1.05);
+  opacity: 0;
+  transition: opacity var(--duration-slow) ease;
+}
+
+.map[data-state="loaded"] iframe {
+  opacity: 1;
+}
+
+.map[data-state="loading"] .map__placeholder .btn {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.map[data-state="loaded"] .map__placeholder {
+  display: none;
+}
+
+@media (min-width: 60em) {
+  .contact__grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-3xl);
+  }
+}
+
+.schedule-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Progreso de la jornada de hoy (lo rellena opening-status.js) */
+.day-progress {
+  --progress: 0;
+  --phase-color: var(--color-success);
+
+  max-width: 26rem;
+  margin-top: var(--space-l);
+  padding: var(--space-m) var(--space-l);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+}
+
+.day-progress[data-phase="before"] {
+  --phase-color: var(--color-warning);
+}
+
+.day-progress[data-phase="after"],
+.day-progress[data-phase="closed-today"] {
+  --phase-color: var(--color-danger);
+}
+
+.day-progress__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  font-size: var(--fs-300);
+}
+
+.day-progress__title {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.day-progress__label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.day-progress__track {
+  position: relative;
+  height: 0.4rem;
+  margin-block: var(--space-s) var(--space-xs);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-raised);
+}
+
+.day-progress__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-wood), var(--color-accent));
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress));
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.day-progress__marker {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--progress) * 100%);
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--color-bg);
+  border-radius: 50%;
+  background: var(--phase-color);
+  box-shadow: 0 0 0 4px rgb(243 233 215 / 0.08);
+  translate: -50% -50%;
+  transition: left var(--duration-slow) var(--ease-out);
+}
+
+.day-progress[data-phase="closed-today"] .day-progress__track,
+.day-progress[data-phase="closed-today"] .day-progress__times {
+  display: none;
+}
+
+.day-progress__times {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
