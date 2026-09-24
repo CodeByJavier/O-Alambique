@@ -3,9 +3,7 @@
   position: relative;
   display: grid;
   align-items: center;
-  /* Alto limitado para no ampliar en exceso una foto panorámica */
-  min-height: min(100vh, 44rem);
-  min-height: min(100svh, 44rem);
+  min-height: 100vh;
   padding-block: calc(var(--header-height) + var(--space-xl)) var(--space-2xl);
   overflow: hidden;
   isolation: isolate;
