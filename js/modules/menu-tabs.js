@@ -22,7 +22,9 @@ function setupTabs(root) {
 
   const select = (tab, { focus = false } = {}) => {
     if (tab.getAttribute('aria-selected') === 'true') return;
-    if (focus) tab.focus();
+    if (focus) tab.focus({ preventScroll: true });
+    // En móvil la barra de pestañas se desplaza: centra la pestaña elegida
+    tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
 
     // View Transitions API como mejora progresiva
     if (document.startViewTransition && !prefersReducedMotion()) {

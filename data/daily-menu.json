@@ -1,8 +1,7 @@
 {
   "available": false,
   "date": null,
-  "price": null,
-  "days": "",
-  "courses": [],
-  "includes": []
+  "starters": [],
+  "mains": [],
+  "desserts": []
 }

@@ -54,10 +54,16 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Restaurant", "CafeOrCoffeeShop"],
+        "@type": [
+          "Restaurant",
+          "CafeOrCoffeeShop"
+        ],
         "@id": "https://www.cafeteriaoalambique.es/#negocio",
         "name": "Cafetería O Alambique",
-        "alternateName": ["O Alambique", "Restaurante Alambique"],
+        "alternateName": [
+          "O Alambique",
+          "Restaurante Alambique"
+        ],
         "description": "Cafetería y restaurante de cocina gallega y tradicional en Verín (Ourense). Menú del día, hamburguesas, comida para llevar y reparto a domicilio.",
         "url": "https://www.cafeteriaoalambique.es/",
         "logo": "https://www.cafeteriaoalambique.es/assets/icons/icon-512.png",
@@ -69,11 +75,19 @@
         "email": "alambiqueverin2@gmail.com",
         "priceRange": "€",
         "currenciesAccepted": "EUR",
-        "servesCuisine": ["Gallega", "Tradicional", "Hamburguesas"],
+        "servesCuisine": [
+          "Gallega",
+          "Tradicional",
+          "Hamburguesas"
+        ],
         "acceptsReservations": true,
-        "hasMenu": { "@id": "https://www.cafeteriaoalambique.es/#carta" },
+        "hasMenu": {
+          "@id": "https://www.cafeteriaoalambique.es/#carta"
+        },
         "hasMap": "https://maps.app.goo.gl/cbPHyHC8E4sGFUoD7",
-        "sameAs": ["https://www.instagram.com/alambiqueverin/"],
+        "sameAs": [
+          "https://www.instagram.com/alambiqueverin/"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Rúa da Constitución, 14",
@@ -82,11 +96,36 @@
           "postalCode": "32600",
           "addressCountry": "ES"
         },
-        "areaServed": { "@type": "City", "name": "Verín" },
+        "areaServed": {
+          "@type": "City",
+          "name": "Verín"
+        },
         "openingHoursSpecification": [
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Thursday", "Friday"], "opens": "08:30", "closes": "23:59" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:30", "closes": "16:30" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:30", "closes": "23:59" }
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:30",
+            "closes": "23:59"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Tuesday",
+            "opens": "08:30",
+            "closes": "16:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "09:30",
+            "closes": "23:59"
+          }
         ]
       },
       {
@@ -98,23 +137,448 @@
         "hasMenuSection": [
           {
             "@type": "MenuSection",
+            "name": "Menú del día",
+            "description": "De lunes a viernes al mediodía. Incluye primer plato, segundo plato, postre, café, pan y bebida.",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Menú del día",
+                "description": "Primer plato, segundo plato, postre, café, pan y bebida.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "13.50",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Raciones",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Patatas fritas",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Patatas dos salsas",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Oreja a la gallega",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Calamares fritos",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Mejillones",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Pimientos de padrón",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Alitas barbacoa",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "As alitas da «Gloria»",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Rabas de calamar",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Espiral de langostinos",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Zorza con patatas",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Raxo con patatas",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Huevos, patatas y chorizo",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Huevos, patatas y jamón",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Tomate con ventresca",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Tabla de embutido y queso",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "10.00",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Sándwiches",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Sándwich mixto",
+                "description": "Jamón york y queso.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Sándwich vegetal",
+                "description": "Lechuga, tomate, cebolla, atún, espárragos y huevo.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Sándwich de pollo",
+                "description": "Pollo crujiente, lechuga, tomate, cebolla, jamón york y queso.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.50",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Bocadillos fríos",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de jamón serrano",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de chorizo",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de salchichón",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de queso",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.50",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Bocadillos calientes",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de bacon",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de tortilla francesa",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de lomo fresco",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Bocadillo de pechuga de pollo",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.00",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Platos combinados",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Bacon, lomo, patatas y huevos",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Filete de ternera, patatas y ensalada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "10.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Pechuga de pollo, patatas y ensalada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Calamares fritos, patatas y ensalada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Chuleta de cerdo, patatas y ensalada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "9.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Chuleta de ternera, patatas y ensalada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "15.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Panceta, hamburguesa, salchicha, huevos y patatas",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "9.00",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
             "name": "Hamburguesas",
             "description": "Servidas en pan brioche de patata con guarnición de patatas fritas.",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "La Clásica Suprema", "description": "Doble queso Cheddar madurado, panceta crujiente y salsa burger especial.", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "La Mediterránea Gourmet", "description": "Queso de Arzúa y semicurado de vaca, tomates secos en aceite, cebolla caramelizada casera y lechuga fresca.", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "La Boletus & Queso", "description": "Lechuga, tomate, queso semicurado, cebolla frita crujiente y salsa de champiñones casera.", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "La Ibérica Ahumada", "description": "Queso de Arzúa fundido, virutas de jamón serrano a la plancha y huevo con yema fluida.", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "La Crispy Garden", "description": "Queso, lechuga, tomate y cebolla frita.", "offers": { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR" } }
+              {
+                "@type": "MenuItem",
+                "name": "La Clásica Suprema",
+                "description": "Doble queso Cheddar madurado, panceta crujiente y salsa burger especial.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Mediterránea Gourmet",
+                "description": "Queso de Arzúa y semicurado de vaca, tomates secos en aceite, cebolla caramelizada casera y lechuga fresca.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Boletus & Queso",
+                "description": "Lechuga, tomate, queso semicurado, cebolla frita crujiente y salsa de champiñones casera.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Ibérica Ahumada",
+                "description": "Queso de Arzúa fundido, virutas de jamón serrano a la plancha y huevo con yema fluida.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Crispy Garden",
+                "description": "Queso, lechuga, tomate y cebolla frita.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "7.00",
+                  "priceCurrency": "EUR"
+                }
+              }
             ]
           },
           {
             "@type": "MenuSection",
             "name": "Postres",
             "hasMenuItem": [
-              { "@type": "MenuItem", "name": "Postre casero", "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "Tarta helada", "offers": { "@type": "Offer", "price": "2.00", "priceCurrency": "EUR" } },
-              { "@type": "MenuItem", "name": "Fruta", "offers": { "@type": "Offer", "price": "1.50", "priceCurrency": "EUR" } }
+              {
+                "@type": "MenuItem",
+                "name": "Postre casero",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Tarta helada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "2.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Fruta",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "1.50",
+                  "priceCurrency": "EUR"
+                }
+              }
             ]
           }
         ]
@@ -125,7 +589,9 @@
         "url": "https://www.cafeteriaoalambique.es/",
         "name": "Cafetería O Alambique",
         "inLanguage": "es",
-        "publisher": { "@id": "https://www.cafeteriaoalambique.es/#negocio" }
+        "publisher": {
+          "@id": "https://www.cafeteriaoalambique.es/#negocio"
+        }
       }
     ]
   }
@@ -152,6 +618,10 @@
     <symbol id="icon-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
     <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></symbol>
     <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.25"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="icon-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M9 7c0-1.2.8-2 1.6-2.6M13.5 7c0-1.6 1-2.8 2.2-3.4"/></symbol>
+    <symbol id="icon-sandwich" viewBox="0 0 24 24"><path d="M3 15.5C3 11 8 7 14 7c4 0 7 1.6 7 4 0 3-4 6.5-10 6.5-5 0-8-.7-8-2z"/><path d="M8 11.5l1.2 1.8M12 10.5l1.2 1.8M16 10.5l1 1.8"/></symbol>
+    <symbol id="icon-cutlery" viewBox="0 0 24 24"><path d="M5 3v5a2 2 0 0 0 4 0V3M7 3v18M18 3c-2.2 1.6-3.2 4.4-3.2 7.5H18V21"/></symbol>
+    <symbol id="icon-cake" viewBox="0 0 24 24"><path d="M4 20h16v-8H4z"/><path d="M4 15.5c1.6 1 3.4 1 5 0s3.4-1 5 0 3.4 1 6 0"/><path d="M12 12V8.5M12 5.5v.01"/></symbol>
     <symbol id="icon-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
     <symbol id="icon-bulb" viewBox="0 0 60 150"><path class="bulb__wire" d="M30 0v62"/><rect class="bulb__cap" x="22" y="60" width="16" height="16" rx="2"/><path class="bulb__cage" d="M24 76 12 100v22c0 10 8 18 18 18s18-8 18-18v-22L36 76M12 108h36M16 124h28M30 76v64"/><path class="bulb__glass" d="M24 78c-8 12-11 22-11 32 0 16 7 27 17 27s17-11 17-27c0-10-3-20-11-32z"/><path class="bulb__filament" d="M26 80v22l2 8 2-8 2 8 2-8V80"/></symbol>
   </svg>
@@ -245,7 +715,7 @@
           <li class="feature" data-reveal>
             <svg class="feature__icon icon" aria-hidden="true"><use href="#icon-plate"/></svg>
             <h3 class="feature__title">Menú del día</h3>
-            <p class="feature__text">Cocina gallega y tradicional que cambia cada día.</p>
+            <p class="feature__text">De lunes a viernes al mediodía, con postre, café, pan y bebida por 13,50&nbsp;€.</p>
           </li>
           <li class="feature" data-reveal>
             <svg class="feature__icon icon" aria-hidden="true"><use href="#icon-burger"/></svg>
@@ -264,9 +734,9 @@
     <section class="section menu" id="carta" aria-labelledby="menu-title">
       <div class="container">
         <header class="section-header" data-reveal>
-          <p class="eyebrow">Nuestra carta</p>
-          <h2 class="section-title" id="menu-title">Hamburguesas y postres</h2>
-          <p class="section-header__text">Todas nuestras recetas se sirven en tierno pan brioche de patata e incluyen guarnición de patatas fritas.</p>
+          <p class="eyebrow">Buenos momentos, mejor compañía</p>
+          <h2 class="section-title" id="menu-title">Nuestra carta</h2>
+          <p class="section-header__text">Raciones para compartir, sándwiches, bocadillos, platos combinados, hamburguesas de la casa y postres.</p>
         </header>
 
         <div class="tabs" data-tabs>
@@ -275,8 +745,20 @@
               <svg class="icon" aria-hidden="true"><use href="#icon-burger"/></svg>
               Hamburguesas
             </button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-raciones" aria-controls="panel-raciones" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#icon-bowl"/></svg>
+              Raciones
+            </button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-bocadillos" aria-controls="panel-bocadillos" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#icon-sandwich"/></svg>
+              Bocadillos
+            </button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-combinados" aria-controls="panel-combinados" aria-selected="false" tabindex="-1">
+              <svg class="icon" aria-hidden="true"><use href="#icon-cutlery"/></svg>
+              Combinados
+            </button>
             <button class="tabs__tab" type="button" role="tab" id="tab-desserts" aria-controls="panel-desserts" aria-selected="false" tabindex="-1">
-              <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="icon" aria-hidden="true"><use href="#icon-cake"/></svg>
               Postres
             </button>
           </div>
@@ -286,6 +768,7 @@
               <h3 class="menu-step__title"><span class="menu-step__label">Paso 1</span> Elige la receta</h3>
               <p class="menu-step__price"><span class="visually-hidden">Precio de cada hamburguesa: </span>7,00&nbsp;€</p>
             </div>
+            <p class="menu-step__intro">Todas nuestras recetas se sirven en tierno pan brioche de patata e incluyen guarnición de patatas fritas.</p>
 
             <ul class="dish-grid" role="list" data-reveal-group>
               <li class="dish-card dish-card--featured" data-reveal>
@@ -366,24 +849,222 @@
             </ul>
           </div>
 
-          <div class="tabs__panel" role="tabpanel" id="panel-desserts" aria-labelledby="tab-desserts" tabindex="0" hidden>
+          <div class="tabs__panel tabs__panel--narrow" role="tabpanel" id="panel-raciones" aria-labelledby="tab-raciones" tabindex="0" hidden>
             <div class="menu-step">
-              <h3 class="menu-step__title">El broche perfecto</h3>
+              <h3 class="menu-step__title">Raciones</h3>
+              <p class="menu-step__note">Perfectas para compartir</p>
             </div>
             <dl class="price-list price-list--large">
               <div class="price-list__row">
-                <dt>Postre casero</dt>
+                <dt>Patatas fritas</dt>
+                <dd>3,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Patatas dos salsas</dt>
                 <dd>3,50&nbsp;€</dd>
               </div>
               <div class="price-list__row">
-                <dt>Tarta helada</dt>
-                <dd>2,00&nbsp;€</dd>
+                <dt>Oreja a la gallega</dt>
+                <dd>5,50&nbsp;€</dd>
               </div>
               <div class="price-list__row">
-                <dt>Fruta</dt>
-                <dd>1,50&nbsp;€</dd>
+                <dt>Calamares fritos</dt>
+                <dd>8,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Mejillones</dt>
+                <dd>6,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Pimientos de padrón</dt>
+                <dd>5,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Alitas barbacoa</dt>
+                <dd>7,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>As alitas da «Gloria»</dt>
+                <dd>7,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Rabas de calamar</dt>
+                <dd>7,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Espiral de langostinos</dt>
+                <dd>8,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Zorza con patatas</dt>
+                <dd>7,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Raxo con patatas</dt>
+                <dd>8,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Huevos, patatas y chorizo</dt>
+                <dd>5,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Huevos, patatas y jamón</dt>
+                <dd>5,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Tomate con ventresca</dt>
+                <dd>8,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Tabla de embutido y queso</dt>
+                <dd>10,00&nbsp;€</dd>
               </div>
             </dl>
+          </div>
+
+          <div class="tabs__panel tabs__panel--narrow" role="tabpanel" id="panel-bocadillos" aria-labelledby="tab-bocadillos" tabindex="0" hidden>
+            <div class="menu-step">
+              <h3 class="menu-step__title">Sándwiches</h3>
+            </div>
+            <dl class="price-list price-list--large">
+              <div class="price-list__row">
+                <dt>Mixto</dt>
+                <dd>3,50&nbsp;€</dd>
+                <dd class="price-list__desc">Jamón york y queso.</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Vegetal</dt>
+                <dd>4,50&nbsp;€</dd>
+                <dd class="price-list__desc">Lechuga, tomate, cebolla, atún, espárragos y huevo.</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>De pollo</dt>
+                <dd>5,50&nbsp;€</dd>
+                <dd class="price-list__desc">Pollo crujiente, lechuga, tomate, cebolla, jamón york y queso.</dd>
+              </div>
+            </dl>
+
+            <div class="menu-step menu-step--spaced">
+              <h3 class="menu-step__title">Bocadillos</h3>
+            </div>
+            <h4 class="price-list__group">Bocadillos fríos</h4>
+            <dl class="price-list price-list--large">
+              <div class="price-list__row">
+                <dt>Jamón serrano</dt>
+                <dd>4,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Chorizo</dt>
+                <dd>4,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Salchichón</dt>
+                <dd>4,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Queso</dt>
+                <dd>4,50&nbsp;€</dd>
+              </div>
+            </dl>
+
+            <h4 class="price-list__group">Bocadillos calientes</h4>
+            <dl class="price-list price-list--large">
+              <div class="price-list__row">
+                <dt>Bacon</dt>
+                <dd>6,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Tortilla francesa</dt>
+                <dd>6,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Lomo fresco</dt>
+                <dd>6,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Pechuga de pollo</dt>
+                <dd>6,00&nbsp;€</dd>
+              </div>
+            </dl>
+            <p class="menu-note">
+              <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+              Cada suplemento tiene un coste de 0,50&nbsp;€.
+            </p>
+          </div>
+
+          <div class="tabs__panel tabs__panel--narrow" role="tabpanel" id="panel-combinados" aria-labelledby="tab-combinados" tabindex="0" hidden>
+            <div class="menu-step">
+              <h3 class="menu-step__title">Platos combinados</h3>
+            </div>
+            <dl class="price-list price-list--large price-list--numbered">
+              <div class="price-list__row">
+                <dt>Bacon, lomo, patatas y huevos</dt>
+                <dd>8,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Filete de ternera, patatas y ensalada</dt>
+                <dd>10,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Pechuga de pollo, patatas y ensalada</dt>
+                <dd>8,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Calamares fritos, patatas y ensalada</dt>
+                <dd>8,50&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Chuleta de cerdo, patatas y ensalada</dt>
+                <dd>9,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Chuleta de ternera, patatas y ensalada</dt>
+                <dd>15,00&nbsp;€</dd>
+              </div>
+              <div class="price-list__row">
+                <dt>Panceta, hamburguesa, salchicha, huevos y patatas</dt>
+                <dd>9,00&nbsp;€</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-desserts" aria-labelledby="tab-desserts" tabindex="0" hidden>
+            <div class="menu-step">
+              <h3 class="menu-step__title">Postres</h3>
+              <p class="menu-step__note">El broche perfecto</p>
+            </div>
+            <ul class="dish-grid" role="list" data-reveal-group>
+              <li class="dish-card" data-reveal>
+                <picture class="dish-card__media">
+                  <source type="image/avif" srcset="assets/img/dessert-postre-casero.avif">
+                  <img src="assets/img/dessert-postre-casero.webp" alt="Porción de tarta casera de chocolate" width="250" height="230" loading="lazy" decoding="async">
+                </picture>
+                <div class="dish-card__body">
+                  <h4 class="dish-card__title">Postre casero</h4>
+                  <p class="dish-card__price">3,50&nbsp;€</p>
+                </div>
+              </li>
+              <li class="dish-card" data-reveal>
+                <picture class="dish-card__media">
+                  <source type="image/avif" srcset="assets/img/dessert-tarta-helada.avif">
+                  <img src="assets/img/dessert-tarta-helada.webp" alt="Porción de tarta helada con sirope de chocolate" width="250" height="230" loading="lazy" decoding="async">
+                </picture>
+                <div class="dish-card__body">
+                  <h4 class="dish-card__title">Tarta helada</h4>
+                  <p class="dish-card__price">2,00&nbsp;€</p>
+                </div>
+              </li>
+              <li class="dish-card" data-reveal>
+                <picture class="dish-card__media">
+                  <source type="image/avif" srcset="assets/img/dessert-fruta.avif">
+                  <img src="assets/img/dessert-fruta.webp" alt="Cuenco de fruta fresca troceada" width="250" height="230" loading="lazy" decoding="async">
+                </picture>
+                <div class="dish-card__body">
+                  <h4 class="dish-card__title">Fruta</h4>
+                  <p class="dish-card__price">1,50&nbsp;€</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -402,55 +1083,96 @@
         <header class="section-header section-header--left" data-reveal>
           <p class="eyebrow">De mercado, cada día</p>
           <h2 class="section-title" id="daily-title">Menú del día</h2>
-          <p class="section-header__text">Platos gallegos y tradicionales que cambian a diario. Consulta aquí el menú de hoy.</p>
         </header>
 
         <div class="daily-card" data-daily-menu data-state="loading" aria-busy="true" data-reveal>
-          <div class="daily-card__state daily-card__state--loading" data-state-view="loading">
-            <p class="visually-hidden">Cargando el menú del día…</p>
-            <span class="skeleton skeleton--title" aria-hidden="true"></span>
-            <span class="skeleton" aria-hidden="true"></span>
-            <span class="skeleton skeleton--short" aria-hidden="true"></span>
-            <span class="skeleton" aria-hidden="true"></span>
-            <span class="skeleton skeleton--short" aria-hidden="true"></span>
-          </div>
-
-          <div class="daily-card__state" data-state-view="success" hidden>
-            <div class="daily-card__head">
-              <h3 class="daily-card__title" data-daily-title>Menú de hoy</h3>
-              <p class="daily-card__price" data-daily-price></p>
+          <div class="daily-card__head">
+            <div>
+              <p class="daily-card__label">Menú completo</p>
+              <p class="daily-card__meta">
+                <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
+                De lunes a viernes, al mediodía
+              </p>
             </div>
-            <p class="daily-card__meta" data-daily-meta></p>
-            <div class="daily-card__courses" data-daily-courses></div>
-            <p class="daily-card__includes" data-daily-includes></p>
+            <p class="daily-card__price">13,50&nbsp;€</p>
           </div>
 
-          <div class="daily-card__state daily-card__state--message" data-state-view="empty" hidden>
-            <svg class="icon icon--xl" aria-hidden="true"><use href="#icon-plate"/></svg>
-            <h3 class="daily-card__title">Muy pronto</h3>
-            <p>Estamos preparando nuestro menú del día. Mientras tanto, llámanos y te contamos qué hay hoy en la cocina.</p>
-            <a class="btn btn--primary" href="tel:+34629255311">
-              <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-              Llamar&nbsp;al&nbsp;629&nbsp;25&nbsp;53&nbsp;11
-            </a>
-          </div>
+          <h3 class="daily-card__title" data-daily-title>Así es nuestro menú</h3>
 
-          <div class="daily-card__state daily-card__state--message" data-state-view="error" hidden>
-            <svg class="icon icon--xl icon--danger" aria-hidden="true"><use href="#icon-alert"/></svg>
-            <h3 class="daily-card__title">No hemos podido cargar el menú</h3>
-            <p data-daily-error>Comprueba tu conexión e inténtalo de nuevo, o llámanos para consultarlo.</p>
-            <div class="daily-card__actions">
-              <button class="btn btn--primary" type="button" data-daily-retry>
+          <ol class="daily-scheme" role="list" data-reveal-group>
+            <li class="daily-scheme__step" data-reveal>
+              <span class="daily-scheme__marker" aria-hidden="true">1</span>
+              <div class="daily-scheme__body">
+                <h4 class="daily-scheme__title">Primer plato</h4>
+                <p class="daily-scheme__hint" data-course-hint="starters">A elegir entre las opciones del día</p>
+                <ul class="daily-scheme__dishes" data-course="starters" hidden></ul>
+              </div>
+            </li>
+            <li class="daily-scheme__step" data-reveal>
+              <span class="daily-scheme__marker" aria-hidden="true">2</span>
+              <div class="daily-scheme__body">
+                <h4 class="daily-scheme__title">Segundo plato</h4>
+                <p class="daily-scheme__hint" data-course-hint="mains">A elegir entre las opciones del día</p>
+                <ul class="daily-scheme__dishes" data-course="mains" hidden></ul>
+              </div>
+            </li>
+            <li class="daily-scheme__step" data-reveal>
+              <span class="daily-scheme__marker" aria-hidden="true">3</span>
+              <div class="daily-scheme__body">
+                <h4 class="daily-scheme__title">Postre</h4>
+                <p class="daily-scheme__hint" data-course-hint="desserts">A elegir entre los postres del día</p>
+                <ul class="daily-scheme__dishes" data-course="desserts" hidden></ul>
+              </div>
+            </li>
+            <li class="daily-scheme__step" data-reveal>
+              <span class="daily-scheme__marker" aria-hidden="true">4</span>
+              <div class="daily-scheme__body">
+                <h4 class="daily-scheme__title">Café</h4>
+                <p class="daily-scheme__hint">Para rematar la comida</p>
+              </div>
+            </li>
+            <li class="daily-scheme__step daily-scheme__step--extra" data-reveal>
+              <span class="daily-scheme__marker" aria-hidden="true">
+                <svg class="icon"><use href="#icon-check"/></svg>
+              </span>
+              <div class="daily-scheme__body">
+                <h4 class="daily-scheme__title">Pan y bebida</h4>
+                <p class="daily-scheme__hint">Incluidos en el precio</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="daily-card__status" aria-live="polite">
+            <p class="daily-note daily-note--loading" data-state-view="loading">
+              <span class="daily-note__spinner" aria-hidden="true"></span>
+              Consultando los platos de hoy…
+            </p>
+
+            <div class="daily-note" data-state-view="empty" hidden>
+              <p>Los platos cambian cada día según el mercado. Llámanos y te contamos qué hay hoy en la cocina.</p>
+              <a class="btn btn--primary" href="tel:+34629255311">
+                <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+                Llamar
+              </a>
+            </div>
+
+            <div class="daily-note daily-note--muted" data-state-view="unavailable" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>
+              <p><strong>Hoy no hay menú del día.</strong> Lo servimos de lunes a viernes al mediodía. Mientras tanto, mira nuestra <a href="#carta">carta</a>.</p>
+            </div>
+
+            <div class="daily-note daily-note--error" data-state-view="error" hidden>
+              <p data-daily-error>No hemos podido cargar los platos de hoy.</p>
+              <button class="btn btn--ghost" type="button" data-daily-retry>
                 <svg class="icon" aria-hidden="true"><use href="#icon-refresh"/></svg>
                 Reintentar
               </button>
-              <a class="btn btn--ghost" href="tel:+34629255311">Llamar</a>
             </div>
-          </div>
 
-          <noscript>
-            <p class="daily-card__noscript">Para ver el menú del día activa JavaScript o llámanos al <a href="tel:+34629255311">629&nbsp;25&nbsp;53&nbsp;11</a>.</p>
-          </noscript>
+            <noscript>
+              <p class="daily-note">Para ver los platos de hoy activa JavaScript o llámanos al <a href="tel:+34629255311">629&nbsp;25&nbsp;53&nbsp;11</a>.</p>
+            </noscript>
+          </div>
         </div>
       </div>
     </section>
@@ -714,11 +1436,16 @@
 
   <dialog class="dialog" id="menu-dialog" aria-labelledby="menu-dialog-title">
     <div class="dialog__header">
-      <h2 class="dialog__title" id="menu-dialog-title">Carta de hamburguesas y postres</h2>
+      <h2 class="dialog__title" id="menu-dialog-title">Carta de O Alambique</h2>
       <button class="dialog__close" type="button" data-dialog-close aria-label="Cerrar carta">
         <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
       </button>
     </div>
+    <picture>
+      <source type="image/avif" srcset="assets/img/carta-2-640.avif 640w, assets/img/carta-2-1024.avif 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <source type="image/webp" srcset="assets/img/carta-2-640.webp 640w, assets/img/carta-2-1024.webp 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <img class="dialog__image" src="assets/img/carta-2-640.jpg" alt="Carta de O Alambique: raciones, sándwiches, bocadillos fríos y calientes y platos combinados con sus precios" width="640" height="960" loading="lazy" decoding="async">
+    </picture>
     <picture>
       <source type="image/avif" srcset="assets/img/carta-640.avif 640w, assets/img/carta-1024.avif 1024w" sizes="(min-width: 700px) 640px, 92vw">
       <source type="image/webp" srcset="assets/img/carta-640.webp 640w, assets/img/carta-1024.webp 1024w" sizes="(min-width: 700px) 640px, 92vw">

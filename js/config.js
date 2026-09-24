@@ -35,6 +35,8 @@ export const DAILY_MENU = Object.freeze({
   // Ruta relativa al propio módulo: funciona tanto en la raíz del dominio como en una subcarpeta (GitHub Pages)
   url: new URL('../data/daily-menu.json', import.meta.url).href,
   timeoutMs: 8000,
+  // Días en los que se sirve (Date#getDay): de lunes a viernes. El precio y lo que incluye están en index.html
+  weekdays: Object.freeze([1, 2, 3, 4, 5]),
 });
 
 export const CLOSING_SOON_MINUTES = 45;

@@ -40,16 +40,18 @@ assets/                 Imágenes (AVIF/WebP/JPG), fuentes woff2 e iconos
 
 ## Actualizar el menú del día
 
-Edita `data/daily-menu.json` (copia la estructura de `daily-menu.example.json`):
+El precio (13,50 €), los días (lunes a viernes al mediodía) y lo que incluye están fijos en `index.html`.
+Los **platos de cada día** se editan en `data/daily-menu.json` (copia la estructura de `daily-menu.example.json`):
 
 | Campo       | Descripción |
 |-------------|-------------|
-| `available` | `true` para mostrarlo, `false` muestra "Muy pronto" |
-| `date`      | Opcional. `AAAA-MM-DD`. Si no coincide con hoy, se oculta (evita mostrar un menú viejo). Déjalo en `null` si el menú vale varios días |
-| `price`     | Número, p. ej. `12.5` |
-| `days`      | Texto libre, p. ej. "De lunes a viernes, al mediodía" |
-| `courses`   | Lista de `{ "name": "Primeros", "dishes": ["...", "..."] }` |
-| `includes`  | Lista, p. ej. `["Pan", "Bebida", "Postre o café"]` |
+| `available` | `true` para mostrar los platos; `false` deja el esquema genérico e invita a llamar |
+| `date`      | `AAAA-MM-DD`. Si no coincide con hoy, no se muestran (evita enseñar platos de otro día). `null` si valen varios días |
+| `starters`  | Primeros platos, p. ej. `["Caldo gallego", "Ensalada mixta"]` |
+| `mains`     | Segundos platos |
+| `desserts`  | Postres |
+
+Sábados, domingos y días cerrados la web muestra «Hoy no hay menú del día» sin cargar el JSON (`DAILY_MENU.weekdays` en `js/config.js`).
 
 ## Cambiar el horario
 
@@ -78,7 +80,6 @@ Todas las rutas son **relativas** (`css/…`, `assets/…`, `../assets/fonts/…
 ## Pendiente antes de publicar
 
 - [ ] **Dominio**: sustituir `https://www.cafeteriaoalambique.es` por el dominio real en `index.html`, `aviso-legal.html`, `privacidad.html`, `robots.txt` y `sitemap.xml`.
-- [ ] **Datos legales**: rellenar razón social y NIF/CIF en `aviso-legal.html` y `privacidad.html` (marcados en rojo como "Pendiente").
 - [ ] Confirmar que el **629 25 53 11** tiene WhatsApp (el formulario de reservas lo usa).
 - [ ] Unificar el nombre en **Google Business Profile** (ahora aparece como "Restaurante Alambique") con "Cafetería O Alambique".
 - [ ] Sustituir la foto del comedor y las imágenes de las hamburguesas por **fotos reales** cuando estén (mismos nombres de archivo y tamaños).

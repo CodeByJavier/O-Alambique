@@ -226,17 +226,39 @@
 /* ---------- Pestañas ---------- */
 .tabs__list {
   display: flex;
-  justify-content: center;
   gap: var(--space-xs);
   width: fit-content;
+  max-width: 100%;
   margin: 0 auto var(--space-2xl);
   padding: 0.35rem;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
   background: var(--color-surface);
+  /* En móvil las pestañas se desplazan en horizontal en lugar de romper la línea */
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hasta 800px las pestañas bajan a varias líneas en lugar de desplazarse */
+@media (max-width: 50em) {
+  .tabs__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    border-radius: var(--radius-l);
+  }
 }
 
 .tabs__tab {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -289,6 +311,40 @@
 .menu-step__label {
   color: var(--color-accent);
 }
+
+.menu-step--spaced {
+  margin-top: var(--space-2xl);
+}
+
+.menu-step__note {
+  color: var(--color-accent);
+  font-family: var(--font-script);
+  font-size: var(--fs-500);
+  font-weight: 700;
+}
+
+.menu-step__intro {
+  margin: calc(-1 * var(--space-s)) 0 var(--space-xl);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.menu-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-l);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+  text-align: center;
+}
+
+.menu-note .icon {
+  color: var(--color-accent);
+  fill: currentColor;
+}
+
 
 .menu-step__price {
   padding: 0.3rem 1rem;
@@ -350,6 +406,14 @@
 .dish-card:hover .dish-card__media img {
   scale: 1.08;
   rotate: -3deg;
+}
+
+.dish-card__price {
+  margin-top: var(--space-2xs);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-500);
+  font-weight: 600;
 }
 
 .dish-card__number {
@@ -448,14 +512,59 @@
   font-weight: 600;
 }
 
+.price-list--numbered {
+  counter-reset: menu-item;
+}
+
+.price-list--numbered .price-list__row {
+  counter-increment: menu-item;
+}
+
+.price-list--numbered dt::before {
+  content: counter(menu-item) ".";
+  display: inline-block;
+  min-width: 1.6em;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
 .price-list--large {
-  max-width: 36rem;
-  margin-inline: auto;
+  gap: 0;
   font-size: var(--fs-500);
 }
 
 .price-list--large .price-list__row {
   padding-block: var(--space-s);
+}
+
+.price-list__row {
+  flex-wrap: wrap;
+}
+
+.price-list .price-list__desc {
+  order: 3;
+  flex-basis: 100%;
+  margin-top: 0.15rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--fs-400);
+  font-weight: 400;
+}
+
+.price-list__group {
+  margin-top: var(--space-l);
+  color: var(--color-accent);
+  font-family: var(--font-script);
+  font-size: var(--fs-600);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Paneles de lista: columna única centrada y con ancho de lectura cómodo */
+.tabs__panel--narrow {
+  max-width: 46rem;
+  margin-inline: auto;
 }
 
 /* ---------- Esqueleto de carga ---------- */
