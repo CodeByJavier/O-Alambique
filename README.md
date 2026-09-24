@@ -67,6 +67,14 @@ Para ver cómo se comporta a otra hora, añade `?at=AAAA-MM-DDTHH:MM` a la URL, 
 - `index.html?at=2026-09-29T16:10` → martes, «Cierra pronto»
 - `index.html?at=2026-09-26T08:50` → sábado antes de abrir
 
+## Publicar en GitHub Pages
+
+Todas las rutas son **relativas** (`css/…`, `assets/…`, `../assets/fonts/…` en CSS y `new URL(…, import.meta.url)` en JS), así que la web funciona tanto en la raíz de un dominio como en una subcarpeta como `https://codebyjavier.github.io/O-Alambique/`. **No uses rutas que empiecen por `/`**: en GitHub Pages apuntarían a `codebyjavier.github.io/` y no a la carpeta del repositorio.
+
+- `.nojekyll` desactiva el procesado de Jekyll (sirve los archivos tal cual).
+- GitHub Pages ignora `.htaccess` y `_headers`: las cabeceras de seguridad solo se aplican en Apache, Netlify o Cloudflare. En GitHub Pages queda la CSP de la etiqueta `<meta>`.
+- GitHub Pages distingue mayúsculas y minúsculas en los nombres de archivo (Windows no).
+
 ## Pendiente antes de publicar
 
 - [ ] **Dominio**: sustituir `https://www.cafeteriaoalambique.es` por el dominio real en `index.html`, `aviso-legal.html`, `privacidad.html`, `robots.txt` y `sitemap.xml`.

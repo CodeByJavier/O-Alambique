@@ -32,7 +32,8 @@ export const RESERVATION = Object.freeze({
 });
 
 export const DAILY_MENU = Object.freeze({
-  url: '/data/daily-menu.json',
+  // Ruta relativa al propio módulo: funciona tanto en la raíz del dominio como en una subcarpeta (GitHub Pages)
+  url: new URL('../data/daily-menu.json', import.meta.url).href,
   timeoutMs: 8000,
 });
 
