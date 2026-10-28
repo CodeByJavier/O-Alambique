@@ -1,4 +1,4 @@
-import { qs, qsa } from '../lib/dom.js';
+import { qs, qsa } from '../lib/dom.js?v=20261028';
 
 const DESKTOP_QUERY = '(min-width: 64em)';
 

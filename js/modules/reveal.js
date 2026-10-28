@@ -1,4 +1,4 @@
-import { qsa, prefersReducedMotion } from '../lib/dom.js';
+import { qsa, prefersReducedMotion } from '../lib/dom.js?v=20261028';
 
 export function initReveal() {
   const targets = qsa('[data-reveal]');

@@ -1,7 +1,7 @@
-import { BUSINESS, DAILY_MENU, OPENING_HOURS } from '../config.js';
-import { createElement, qs, qsa } from '../lib/dom.js';
-import { formatLongDate, getZonedNow, isValidIsoDate, parseSimulatedNow } from '../lib/time.js';
-import { sanitizeText } from '../lib/validators.js';
+import { BUSINESS, DAILY_MENU, OPENING_HOURS } from '../config.js?v=20261028';
+import { createElement, qs, qsa } from '../lib/dom.js?v=20261028';
+import { formatLongDate, getZonedNow, isValidIsoDate, parseSimulatedNow } from '../lib/time.js?v=20261028';
+import { sanitizeText } from '../lib/validators.js?v=20261028';
 
 const DEFAULT_TITLE = 'Así es nuestro menú';
 

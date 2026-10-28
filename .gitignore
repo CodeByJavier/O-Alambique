@@ -1,0 +1,3 @@
+# Datos privados del panel (contraseña, sesiones, intentos de acceso): solo existen en el servidor
+gestion/storage/*
+!gestion/storage/.htaccess

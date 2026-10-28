@@ -1,0 +1,27 @@
+# Panel privado de gestión
+Options -Indexes
+DirectoryIndex index.php
+
+# Solo se puede abrir index.php, panel.css y panel.js: el resto (configuración, código, plantillas, datos) queda bloqueado
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(src|templates|storage)(/|$) - [F,L]
+  RewriteRule ^config\.php$ - [F,L]
+
+  # Esta carpeta tiene sus propias reglas, así que se repite la obligación de usar HTTPS
+  # (la contraseña nunca debe viajar sin cifrar)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(config\.php|.*\.json|.*\.lock)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+  Header always set Cache-Control "no-store, max-age=0"
+</IfModule>

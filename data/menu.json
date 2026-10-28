@@ -1,0 +1,302 @@
+{
+  "version": 1,
+  "currency": "EUR",
+  "categories": [
+    {
+      "id": "burgers",
+      "name": "Hamburguesas",
+      "note": "Todas incluyen patatas fritas. Además, puedes cambiar la carne pagando un suplemento.",
+      "items": [
+        {
+          "id": "burger-simple-traditional",
+          "name": "La Simple Tradicional",
+          "description": "Doble de queso fundido.",
+          "price": 500,
+          "options": "meat"
+        },
+        {
+          "id": "burger-classic-complete",
+          "name": "La Completa de Siempre",
+          "description": "Queso, lechuga, tomate natural y cebolla.",
+          "price": 650,
+          "options": "meat"
+        },
+        {
+          "id": "burger-american-crunchy",
+          "name": "La Americana Crunchy",
+          "description": "Queso cheddar, bacon crujiente, pepinillos, cebolla frita crujiente y salsa barbacoa.",
+          "price": 700,
+          "options": "meat"
+        },
+        {
+          "id": "burger-house-special",
+          "name": "La Especial “O Alambique”",
+          "description": "Queso de Arzúa fundido, virutas de jamón serrano, huevo frito con yema fluida, lechuga y tomate.",
+          "tip": "¡Pídela con nuestra salsa especial de la casa!",
+          "price": 800,
+          "options": "meat"
+        },
+        {
+          "id": "burger-smash",
+          "name": "La Smash “Alambique”",
+          "description": "Doble carne de ternera, mezcla de queso cheddar y gouda, bacon crujiente y nuestra salsa Alambique.",
+          "price": 750,
+          "options": "meat"
+        }
+      ]
+    },
+    {
+      "id": "starters",
+      "name": "Raciones",
+      "items": [
+        {
+          "id": "fries",
+          "name": "Patatas fritas",
+          "price": 300
+        },
+        {
+          "id": "fries-two-sauces",
+          "name": "Patatas dos salsas",
+          "price": 350
+        },
+        {
+          "id": "galician-pork-ear",
+          "name": "Oreja a la gallega",
+          "price": 550
+        },
+        {
+          "id": "fried-squid",
+          "name": "Calamares fritos",
+          "price": 800
+        },
+        {
+          "id": "mussels",
+          "name": "Mejillones",
+          "price": 650
+        },
+        {
+          "id": "padron-peppers",
+          "name": "Pimientos de padrón",
+          "price": 550
+        },
+        {
+          "id": "bbq-wings",
+          "name": "Alitas barbacoa",
+          "price": 750
+        },
+        {
+          "id": "gloria-wings",
+          "name": "As alitas da «Gloria»",
+          "price": 750
+        },
+        {
+          "id": "squid-strips",
+          "name": "Rabas de calamar",
+          "price": 700
+        },
+        {
+          "id": "prawn-spiral",
+          "name": "Espiral de langostinos",
+          "price": 850
+        },
+        {
+          "id": "zorza-potatoes",
+          "name": "Zorza con patatas",
+          "price": 750
+        },
+        {
+          "id": "raxo-potatoes",
+          "name": "Raxo con patatas",
+          "price": 850
+        },
+        {
+          "id": "eggs-potatoes-chorizo",
+          "name": "Huevos, patatas y chorizo",
+          "price": 550
+        },
+        {
+          "id": "eggs-potatoes-ham",
+          "name": "Huevos, patatas y jamón",
+          "price": 550
+        },
+        {
+          "id": "tomato-tuna-belly",
+          "name": "Tomate con ventresca",
+          "price": 800
+        },
+        {
+          "id": "cold-cuts-board",
+          "name": "Tabla de embutido y queso",
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "name": "Sándwiches",
+      "items": [
+        {
+          "id": "sandwich-ham-cheese",
+          "name": "Sándwich mixto",
+          "description": "Jamón york y queso.",
+          "price": 350
+        },
+        {
+          "id": "sandwich-veggie",
+          "name": "Sándwich vegetal",
+          "description": "Lechuga, tomate, cebolla, atún, espárragos y huevo.",
+          "price": 450
+        },
+        {
+          "id": "sandwich-chicken",
+          "name": "Sándwich de pollo",
+          "description": "Pollo crujiente, lechuga, tomate, cebolla, jamón york y queso.",
+          "price": 550
+        }
+      ]
+    },
+    {
+      "id": "cold-rolls",
+      "name": "Bocadillos fríos",
+      "note": "Cada suplemento cuesta 0,50 €. Indícalo en los comentarios del pedido.",
+      "items": [
+        {
+          "id": "roll-serrano-ham",
+          "name": "Bocadillo de jamón serrano",
+          "price": 450
+        },
+        {
+          "id": "roll-chorizo",
+          "name": "Bocadillo de chorizo",
+          "price": 450
+        },
+        {
+          "id": "roll-salchichon",
+          "name": "Bocadillo de salchichón",
+          "price": 450
+        },
+        {
+          "id": "roll-cheese",
+          "name": "Bocadillo de queso",
+          "price": 450
+        }
+      ]
+    },
+    {
+      "id": "hot-rolls",
+      "name": "Bocadillos calientes",
+      "note": "Cada suplemento cuesta 0,50 €. Indícalo en los comentarios del pedido.",
+      "items": [
+        {
+          "id": "roll-bacon",
+          "name": "Bocadillo de bacon",
+          "price": 600
+        },
+        {
+          "id": "roll-omelette",
+          "name": "Bocadillo de tortilla francesa",
+          "price": 600
+        },
+        {
+          "id": "roll-pork-loin",
+          "name": "Bocadillo de lomo fresco",
+          "price": 600
+        },
+        {
+          "id": "roll-chicken-breast",
+          "name": "Bocadillo de pechuga de pollo",
+          "price": 600
+        }
+      ]
+    },
+    {
+      "id": "combos",
+      "name": "Platos combinados",
+      "items": [
+        {
+          "id": "combo-bacon-loin",
+          "name": "Bacon, lomo, patatas y huevos",
+          "price": 800
+        },
+        {
+          "id": "combo-beef-fillet",
+          "name": "Filete de ternera, patatas y ensalada",
+          "price": 1000
+        },
+        {
+          "id": "combo-chicken-breast",
+          "name": "Pechuga de pollo, patatas y ensalada",
+          "price": 850
+        },
+        {
+          "id": "combo-fried-squid",
+          "name": "Calamares fritos, patatas y ensalada",
+          "price": 850
+        },
+        {
+          "id": "combo-pork-chop",
+          "name": "Chuleta de cerdo, patatas y ensalada",
+          "price": 900
+        },
+        {
+          "id": "combo-beef-chop",
+          "name": "Chuleta de ternera, patatas y ensalada",
+          "price": 1500
+        },
+        {
+          "id": "combo-mixed-grill",
+          "name": "Panceta, hamburguesa, salchicha, huevos y patatas",
+          "price": 900
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Postres",
+      "items": [
+        {
+          "id": "dessert-homemade",
+          "name": "Postre casero",
+          "price": 350
+        },
+        {
+          "id": "dessert-ice-cream-cake",
+          "name": "Tarta helada",
+          "price": 200
+        },
+        {
+          "id": "dessert-fruit",
+          "name": "Fruta",
+          "price": 150
+        }
+      ]
+    }
+  ],
+  "optionGroups": {
+    "meat": {
+      "name": "Carne",
+      "choices": [
+        {
+          "id": "meat-beef",
+          "name": "Ternera",
+          "price": 0
+        },
+        {
+          "id": "meat-crispy-chicken",
+          "name": "Pollo crujiente",
+          "price": 150
+        },
+        {
+          "id": "meat-galician-wagyu",
+          "name": "Vaca rubia gallega con wagyu",
+          "price": 300
+        },
+        {
+          "id": "meat-ox",
+          "name": "Auténtico buey",
+          "price": 300
+        }
+      ]
+    }
+  }
+}

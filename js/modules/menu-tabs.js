@@ -1,4 +1,4 @@
-import { qs, qsa, prefersReducedMotion } from '../lib/dom.js';
+import { qs, qsa, prefersReducedMotion } from '../lib/dom.js?v=20261028';
 
 export function initMenuTabs() {
   qsa('[data-tabs]').forEach(setupTabs);

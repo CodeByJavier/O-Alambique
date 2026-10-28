@@ -1,5 +1,5 @@
-import { BUSINESS } from '../config.js';
-import { qs } from '../lib/dom.js';
+import { BUSINESS } from '../config.js?v=20261028';
+import { qs } from '../lib/dom.js?v=20261028';
 
 const LOAD_TIMEOUT_MS = 12_000;
 

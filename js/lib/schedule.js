@@ -1,5 +1,5 @@
-import { OPENING_HOURS, RESERVATION, CLOSING_SOON_MINUTES } from '../config.js';
-import { DAY_NAMES, formatDuration, formatMinutes, toMinutes, weekdayOfIso } from './time.js';
+import { OPENING_HOURS, RESERVATION, CLOSING_SOON_MINUTES } from '../config.js?v=20261028';
+import { DAY_NAMES, formatDuration, formatMinutes, toMinutes, weekdayOfIso } from './time.js?v=20261028';
 
 export function getIntervals(weekday) {
   return (OPENING_HOURS[weekday] ?? []).map(({ open, close }) => ({

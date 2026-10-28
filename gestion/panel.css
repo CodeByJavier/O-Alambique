@@ -1,0 +1,354 @@
+/* Panel de gestión: pensado para usarse desde el móvil de la cafetería */
+:root {
+  color-scheme: dark;
+  --bg: #141110;
+  --surface: #221d1a;
+  --surface-raised: #2b2521;
+  --line: rgb(243 233 215 / 0.14);
+  --text: #f3e9d7;
+  --muted: #c4b8a5;
+  --accent: #e3a73f;
+  --on-accent: #1a1208;
+  --success: #8fd19e;
+  --danger: #ff8a75;
+  --radius: 0.875rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+.panel {
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 7rem;
+}
+
+.card {
+  margin: 0 0 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.card--narrow {
+  max-width: 26rem;
+  margin: 10vh auto 0;
+  text-align: center;
+}
+
+.brand {
+  display: block;
+  width: 9rem;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.muted,
+.hint,
+.help {
+  color: var(--muted);
+}
+
+.muted {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+}
+
+.hint {
+  margin: -0.4rem 0 0;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.help {
+  margin: 1.5rem 0 1rem;
+}
+
+.stack {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  text-align: left;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgb(243 233 215 / 0.3);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.input:focus-visible,
+.button:focus-visible,
+.switch:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgb(243 233 215 / 0.3);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button--small {
+  min-height: 2.5rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.9rem;
+}
+
+.button--block {
+  width: 100%;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.notice {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+
+.notice--success {
+  border: 1px solid rgb(143 209 158 / 0.5);
+  background: rgb(143 209 158 / 0.12);
+}
+
+.notice--error {
+  border: 1px solid var(--danger);
+  background: rgb(255 138 117 / 0.12);
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  background: rgb(227 167 63 / 0.12);
+}
+
+.summary p {
+  margin: 0;
+}
+
+.group {
+  min-width: 0;
+  padding-top: 0.5rem;
+}
+
+.group__title {
+  padding: 0 0.4rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.switch-row:last-child {
+  border-bottom: 0;
+}
+
+.switch-row__name {
+  display: block;
+  font-weight: 600;
+}
+
+.switch-row__meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Interruptor: es un checkbox normal con otro aspecto (sigue funcionando con teclado y lectores de pantalla) */
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 1.9rem;
+  margin: 0;
+  border-radius: 999px;
+  background: #5a4f47;
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  transition: translate 160ms ease;
+}
+
+.switch:checked {
+  background: var(--success);
+}
+
+.switch:checked::after {
+  translate: 1.35rem 0;
+}
+
+.switch-row:has(.switch:not(:checked)) .switch-row__name {
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.savebar {
+  position: fixed;
+  inset: auto 0 0;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: rgb(20 17 16 / 0.95);
+}
+
+.savebar .button {
+  display: flex;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.footer-links {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch,
+  .switch::after {
+    transition: none;
+  }
+}
+
+/* ---------- Campo de contraseña con «ojo» ---------- */
+.password-field {
+  position: relative;
+}
+
+.password-field .input {
+  padding-right: 3.25rem;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  translate: 0 -50%;
+}
+
+.password-toggle:hover {
+  color: var(--text);
+}
+
+.password-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 0;
+}
+
+.eye {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.password-toggle .eye--hide,
+.password-toggle[aria-pressed="true"] .eye--show {
+  display: none;
+}
+
+.password-toggle[aria-pressed="true"] .eye--hide {
+  display: block;
+}
+
+/* Edge añade su propio ojo: se quita para que no salgan dos */
+.password-field input::-ms-reveal {
+  display: none;
+}

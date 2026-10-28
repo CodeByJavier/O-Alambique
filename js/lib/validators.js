@@ -1,6 +1,6 @@
-import { RESERVATION } from '../config.js';
-import { addDaysToIso, isValidIsoDate } from './time.js';
-import { getReservationSlots } from './schedule.js';
+import { RESERVATION } from '../config.js?v=20261028';
+import { addDaysToIso, isValidIsoDate } from './time.js?v=20261028';
+import { getReservationSlots } from './schedule.js?v=20261028';
 
 const NAME_PATTERN = /^[\p{L}\p{M}' .-]+$/u;
 const PHONE_PATTERN = /^(?:\+34|0034)?[6789]\d{8}$/;
@@ -14,6 +14,14 @@ export const sanitizeText = (value = '') =>
 
 export const normalizePhone = (value = '') => String(value).replace(/[\s().-]/g, '');
 
+// Teléfono español: se reutiliza en reservas y pedidos (cada uno con su mensaje si está vacío)
+export function validatePhone(value, emptyMessage = 'Escribe tu teléfono.') {
+  const phone = normalizePhone(value);
+  if (!phone) return emptyMessage;
+  if (!PHONE_PATTERN.test(phone)) return 'Introduce un teléfono español válido (9 cifras).';
+  return '';
+}
+
 export const validators = {
   name(value) {
     const name = sanitizeText(value);
@@ -25,10 +33,7 @@ export const validators = {
   },
 
   phone(value) {
-    const phone = normalizePhone(value);
-    if (!phone) return 'Necesitamos un teléfono para confirmar la reserva.';
-    if (!PHONE_PATTERN.test(phone)) return 'Introduce un teléfono español válido (9 cifras).';
-    return '';
+    return validatePhone(value, 'Necesitamos un teléfono para confirmar la reserva.');
   },
 
   guests(value) {

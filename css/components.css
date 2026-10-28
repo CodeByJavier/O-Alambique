@@ -453,6 +453,12 @@
   line-height: 1.5;
 }
 
+/* Sugerencia destacada dentro de una tarjeta (p. ej. la salsa de la casa) */
+.dish-card__tip {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
 @media (min-width: 40em) {
   .dish-grid {
     grid-template-columns: repeat(2, 1fr);

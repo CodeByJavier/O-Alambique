@@ -1,7 +1,7 @@
-import { BUSINESS } from '../config.js';
-import { qs, qsa } from '../lib/dom.js';
-import { formatMinutes, getZonedNow, parseSimulatedNow } from '../lib/time.js';
-import { describeStatus, getDayProgress, getOpeningStatus } from '../lib/schedule.js';
+import { BUSINESS } from '../config.js?v=20261028';
+import { qs, qsa } from '../lib/dom.js?v=20261028';
+import { formatMinutes, getZonedNow, parseSimulatedNow } from '../lib/time.js?v=20261028';
+import { describeStatus, getDayProgress, getOpeningStatus } from '../lib/schedule.js?v=20261028';
 
 const FALLBACK_TEXT = 'Consulta nuestro horario';
 

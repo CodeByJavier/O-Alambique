@@ -1,4 +1,4 @@
-import { qs, qsa } from '../lib/dom.js';
+import { qs, qsa } from '../lib/dom.js?v=20261028';
 
 export function initDialogs() {
   qsa('[data-dialog-open]').forEach((trigger) => {

@@ -34,20 +34,21 @@
   <link rel="preload" href="assets/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/avif" media="(min-width: 768px)"
-        imagesrcset="assets/img/interior-1024.avif 1024w, assets/img/interior-1600.avif 1600w, assets/img/interior-2040.avif 2040w"
+        imagesrcset="assets/img/interior-1024.avif?v=20261028 1024w, assets/img/interior-1600.avif?v=20261028 1600w, assets/img/interior-2040.avif?v=20261028 2040w"
         imagesizes="100vw">
   <link rel="preload" as="image" type="image/avif" media="(max-width: 767px)"
-        imagesrcset="assets/img/interior-mobile-480.avif 480w, assets/img/interior-mobile-900.avif 900w"
+        imagesrcset="assets/img/interior-mobile-480.avif?v=20261028 480w, assets/img/interior-mobile-900.avif?v=20261028 900w"
         imagesizes="100vw">
 
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/tokens.css?v=20261028">
+  <link rel="stylesheet" href="css/base.css?v=20261028">
+  <link rel="stylesheet" href="css/layout.css?v=20261028">
+  <link rel="stylesheet" href="css/components.css?v=20261028">
+  <link rel="stylesheet" href="css/sections.css?v=20261028">
+  <link rel="stylesheet" href="css/order.css?v=20261028">
+  <link rel="stylesheet" href="css/animations.css?v=20261028">
 
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=20261028"></script>
 
   <script type="application/ld+json">
   {
@@ -498,8 +499,28 @@
             "hasMenuItem": [
               {
                 "@type": "MenuItem",
-                "name": "La Clásica Suprema",
-                "description": "Doble queso Cheddar madurado, panceta crujiente y salsa burger especial.",
+                "name": "La Simple Tradicional",
+                "description": "Doble de queso fundido.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "5.00",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Completa de Siempre",
+                "description": "Queso, lechuga, tomate natural y cebolla.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "6.50",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "La Americana Crunchy",
+                "description": "Queso cheddar, bacon crujiente, pepinillos, cebolla frita crujiente y salsa barbacoa.",
                 "offers": {
                   "@type": "Offer",
                   "price": "7.00",
@@ -508,41 +529,21 @@
               },
               {
                 "@type": "MenuItem",
-                "name": "La Mediterránea Gourmet",
-                "description": "Queso de Arzúa y semicurado de vaca, tomates secos en aceite, cebolla caramelizada casera y lechuga fresca.",
+                "name": "La Especial “O Alambique”",
+                "description": "Queso de Arzúa fundido, virutas de jamón serrano, huevo frito con yema fluida, lechuga y tomate.",
                 "offers": {
                   "@type": "Offer",
-                  "price": "7.00",
+                  "price": "8.00",
                   "priceCurrency": "EUR"
                 }
               },
               {
                 "@type": "MenuItem",
-                "name": "La Boletus & Queso",
-                "description": "Lechuga, tomate, queso semicurado, cebolla frita crujiente y salsa de champiñones casera.",
+                "name": "La Smash “Alambique”",
+                "description": "Doble carne de ternera, mezcla de queso cheddar y gouda, bacon crujiente y nuestra salsa Alambique.",
                 "offers": {
                   "@type": "Offer",
-                  "price": "7.00",
-                  "priceCurrency": "EUR"
-                }
-              },
-              {
-                "@type": "MenuItem",
-                "name": "La Ibérica Ahumada",
-                "description": "Queso de Arzúa fundido, virutas de jamón serrano a la plancha y huevo con yema fluida.",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "7.00",
-                  "priceCurrency": "EUR"
-                }
-              },
-              {
-                "@type": "MenuItem",
-                "name": "La Crispy Garden",
-                "description": "Queso, lechuga, tomate y cebolla frita.",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "7.00",
+                  "price": "7.50",
                   "priceCurrency": "EUR"
                 }
               }
@@ -615,6 +616,8 @@
     <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     <symbol id="icon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
     <symbol id="icon-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
     <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></symbol>
     <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.25"/><path d="M17.5 6.5h.01"/></symbol>
@@ -631,7 +634,7 @@
   <header class="site-header" data-header>
     <div class="site-header__inner container">
       <a class="brand" href="#inicio" aria-label="O Alambique, ir al inicio">
-        <img class="brand__mark" src="assets/img/logo-mark.svg" alt="" width="493" height="403">
+        <img class="brand__mark" src="assets/img/logo-mark.svg?v=20261028" alt="" width="493" height="403">
         <span class="brand__name">O Alambique</span>
       </a>
 
@@ -651,6 +654,7 @@
           <li><a class="site-nav__link" href="#nosotros">Nosotros</a></li>
           <li><a class="site-nav__link" href="#carta">Carta</a></li>
           <li><a class="site-nav__link" href="#menu-del-dia">Menú del día</a></li>
+          <li><a class="site-nav__link" href="#pedidos">Pedidos</a></li>
           <li><a class="site-nav__link" href="#horario">Horario</a></li>
           <li><a class="site-nav__link" href="#contacto">Contacto</a></li>
         </ul>
@@ -666,11 +670,11 @@
   <main id="contenido" tabindex="-1">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <picture class="hero__media">
-        <source type="image/avif" media="(max-width: 767px)" srcset="assets/img/interior-mobile-480.avif 480w, assets/img/interior-mobile-900.avif 900w" sizes="100vw">
-        <source type="image/webp" media="(max-width: 767px)" srcset="assets/img/interior-mobile-480.webp 480w, assets/img/interior-mobile-900.webp 900w" sizes="100vw">
-        <source type="image/avif" srcset="assets/img/interior-1024.avif 1024w, assets/img/interior-1600.avif 1600w, assets/img/interior-2040.avif 2040w" sizes="100vw">
-        <source type="image/webp" srcset="assets/img/interior-1024.webp 1024w, assets/img/interior-1600.webp 1600w, assets/img/interior-2040.webp 2040w" sizes="100vw">
-        <img class="hero__image" src="assets/img/interior-1600.jpg" alt="Comedor de O Alambique con lámparas cálidas y el nombre del local en la pared" width="1600" height="620" fetchpriority="high" decoding="async">
+        <source type="image/avif" media="(max-width: 767px)" srcset="assets/img/interior-mobile-480.avif?v=20261028 480w, assets/img/interior-mobile-900.avif?v=20261028 900w" sizes="100vw">
+        <source type="image/webp" media="(max-width: 767px)" srcset="assets/img/interior-mobile-480.webp?v=20261028 480w, assets/img/interior-mobile-900.webp?v=20261028 900w" sizes="100vw">
+        <source type="image/avif" srcset="assets/img/interior-1024.avif?v=20261028 1024w, assets/img/interior-1600.avif?v=20261028 1600w, assets/img/interior-2040.avif?v=20261028 2040w" sizes="100vw">
+        <source type="image/webp" srcset="assets/img/interior-1024.webp?v=20261028 1024w, assets/img/interior-1600.webp?v=20261028 1600w, assets/img/interior-2040.webp?v=20261028 2040w" sizes="100vw">
+        <img class="hero__image" src="assets/img/interior-1600.jpg?v=20261028" alt="Comedor de O Alambique con lámparas cálidas y el nombre del local en la pared" width="1600" height="620" fetchpriority="high" decoding="async">
       </picture>
 
       <div class="hero__content container">
@@ -725,7 +729,7 @@
           <li class="feature" data-reveal>
             <svg class="feature__icon icon" aria-hidden="true"><use href="#icon-bag"/></svg>
             <h3 class="feature__title">Para llevar y a domicilio</h3>
-            <p class="feature__text">Recógelo en el local o pídelo a casa con E.logo.</p>
+            <p class="feature__text">Haz tu pedido online y recógelo en el local, o pídelo a casa con E.logo.</p>
           </li>
         </ul>
       </div>
@@ -765,81 +769,90 @@
 
           <div class="tabs__panel" role="tabpanel" id="panel-burgers" aria-labelledby="tab-burgers" tabindex="0">
             <div class="menu-step">
-              <h3 class="menu-step__title"><span class="menu-step__label">Paso 1</span> Elige la receta</h3>
-              <p class="menu-step__price"><span class="visually-hidden">Precio de cada hamburguesa: </span>7,00&nbsp;€</p>
+              <h3 class="menu-step__title"><span class="menu-step__label">Paso 1</span> Elige tu receta</h3>
             </div>
             <p class="menu-step__intro">Todas nuestras recetas se sirven en tierno pan brioche de patata e incluyen guarnición de patatas fritas.</p>
 
             <ul class="dish-grid" role="list" data-reveal-group>
-              <li class="dish-card dish-card--featured" data-reveal>
+              <li class="dish-card" data-reveal data-dish="burger-simple-traditional">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/burger-clasica-suprema.avif">
-                  <img src="assets/img/burger-clasica-suprema.webp" alt="Hamburguesa La Clásica Suprema con cheddar y panceta" width="240" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/burger-simple-tradicional.avif?v=20261028">
+                  <img src="assets/img/burger-simple-tradicional.webp?v=20261028" alt="Hamburguesa La Simple Tradicional con doble de queso fundido" width="240" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <p class="dish-card__number" aria-hidden="true">01</p>
-                  <h4 class="dish-card__title">La Clásica Suprema</h4>
-                  <p class="dish-card__tag"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg> Recomendada</p>
-                  <p class="dish-card__text">Doble queso Cheddar madurado, panceta crujiente y salsa burger especial.</p>
+                  <h4 class="dish-card__title">La Simple Tradicional</h4>
+                  <p class="dish-card__text">Doble de queso fundido.</p>
+                  <p class="dish-card__price">5,00&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="burger-classic-complete">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/burger-mediterranea-gourmet.avif">
-                  <img src="assets/img/burger-mediterranea-gourmet.webp" alt="Hamburguesa La Mediterránea Gourmet con queso de Arzúa y tomate seco" width="240" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/burger-completa-siempre.avif?v=20261028">
+                  <img src="assets/img/burger-completa-siempre.webp?v=20261028" alt="Hamburguesa La Completa de Siempre con queso, lechuga, tomate y cebolla" width="240" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <p class="dish-card__number" aria-hidden="true">02</p>
-                  <h4 class="dish-card__title">La Mediterránea Gourmet</h4>
-                  <p class="dish-card__text">Mezcla de queso de Arzúa y semicurado de vaca, tomates secos en aceite, nuestra cebolla caramelizada casera y lechuga fresca.</p>
+                  <h4 class="dish-card__title">La Completa de Siempre</h4>
+                  <p class="dish-card__text">Queso, lechuga, tomate natural y cebolla.</p>
+                  <p class="dish-card__price">6,50&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="burger-american-crunchy">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/burger-boletus-queso.avif">
-                  <img src="assets/img/burger-boletus-queso.webp" alt="Hamburguesa La Boletus y Queso con cebolla frita y salsa de champiñones" width="240" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/burger-americana-crunchy.avif?v=20261028">
+                  <img src="assets/img/burger-americana-crunchy.webp?v=20261028" alt="Hamburguesa La Americana Crunchy con cheddar, bacon y cebolla frita" width="240" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <p class="dish-card__number" aria-hidden="true">03</p>
-                  <h4 class="dish-card__title">La Boletus &amp; Queso</h4>
-                  <p class="dish-card__text">Lechuga, tomate, queso semicurado, cebolla frita crujiente y nuestra salsa de champiñones.</p>
+                  <h4 class="dish-card__title">La Americana Crunchy</h4>
+                  <p class="dish-card__text">Queso cheddar, bacon crujiente, pepinillos, cebolla frita crujiente y salsa barbacoa.</p>
+                  <p class="dish-card__price">7,00&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card dish-card--featured" data-reveal data-dish="burger-house-special">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/burger-iberica-ahumada.avif">
-                  <img src="assets/img/burger-iberica-ahumada.webp" alt="Hamburguesa La Ibérica Ahumada con jamón serrano y huevo" width="240" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/burger-especial-alambique.avif?v=20261028">
+                  <img src="assets/img/burger-especial-alambique.webp?v=20261028" alt="Hamburguesa La Especial O Alambique con jamón serrano y huevo frito" width="240" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <p class="dish-card__number" aria-hidden="true">04</p>
-                  <h4 class="dish-card__title">La Ibérica Ahumada</h4>
-                  <p class="dish-card__text">Queso de Arzúa fundido, virutas de jamón serrano a la plancha y huevo con yema fluida.</p>
+                  <h4 class="dish-card__title">La Especial &ldquo;O Alambique&rdquo;</h4>
+                  <p class="dish-card__tag"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg> Especial de la casa</p>
+                  <p class="dish-card__text">Queso de Arzúa fundido, virutas de jamón serrano, huevo frito con yema fluida, lechuga y tomate.</p>
+                  <p class="dish-card__text dish-card__tip">¡Pídela con nuestra salsa especial de la casa!</p>
+                  <p class="dish-card__price">8,00&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="burger-smash">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/burger-crispy-garden.avif">
-                  <img src="assets/img/burger-crispy-garden.webp" alt="Hamburguesa La Crispy Garden con queso, lechuga y cebolla frita" width="240" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/burger-smash-alambique.avif?v=20261028">
+                  <img src="assets/img/burger-smash-alambique.webp?v=20261028" alt="Hamburguesa La Smash Alambique con doble carne, cheddar, gouda y bacon" width="240" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <p class="dish-card__number" aria-hidden="true">05</p>
-                  <h4 class="dish-card__title">La Crispy Garden</h4>
-                  <p class="dish-card__text">Queso, lechuga, tomate y cebolla frita.</p>
+                  <h4 class="dish-card__title">La Smash &ldquo;Alambique&rdquo;</h4>
+                  <p class="dish-card__text">Doble carne de ternera, mezcla de queso cheddar y gouda, bacon crujiente y nuestra salsa Alambique.</p>
+                  <p class="dish-card__price">7,50&nbsp;€</p>
                 </div>
               </li>
               <li class="dish-card dish-card--options" data-reveal>
                 <div class="dish-card__body">
                   <h3 class="dish-card__title"><span class="menu-step__label">Paso 2</span> ¿Quieres cambiar la carne?</h3>
                   <dl class="price-list">
-                    <div class="price-list__row">
-                      <dt>Ternera selección</dt>
+                    <div class="price-list__row" data-dish="meat-beef">
+                      <dt>Ternera</dt>
                       <dd>Incluida</dd>
                     </div>
-                    <div class="price-list__row">
+                    <div class="price-list__row" data-dish="meat-crispy-chicken">
                       <dt>Pollo crujiente</dt>
                       <dd>+1,50&nbsp;€</dd>
                     </div>
-                    <div class="price-list__row">
+                    <div class="price-list__row" data-dish="meat-galician-wagyu">
+                      <dt>Vaca rubia gallega con wagyu</dt>
+                      <dd>+3,00&nbsp;€</dd>
+                    </div>
+                    <div class="price-list__row" data-dish="meat-ox">
                       <dt>Auténtico buey</dt>
                       <dd>+3,00&nbsp;€</dd>
                     </div>
@@ -855,67 +868,67 @@
               <p class="menu-step__note">Perfectas para compartir</p>
             </div>
             <dl class="price-list price-list--large">
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="fries">
                 <dt>Patatas fritas</dt>
                 <dd>3,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="fries-two-sauces">
                 <dt>Patatas dos salsas</dt>
                 <dd>3,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="galician-pork-ear">
                 <dt>Oreja a la gallega</dt>
                 <dd>5,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="fried-squid">
                 <dt>Calamares fritos</dt>
                 <dd>8,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="mussels">
                 <dt>Mejillones</dt>
                 <dd>6,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="padron-peppers">
                 <dt>Pimientos de padrón</dt>
                 <dd>5,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="bbq-wings">
                 <dt>Alitas barbacoa</dt>
                 <dd>7,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="gloria-wings">
                 <dt>As alitas da «Gloria»</dt>
                 <dd>7,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="squid-strips">
                 <dt>Rabas de calamar</dt>
                 <dd>7,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="prawn-spiral">
                 <dt>Espiral de langostinos</dt>
                 <dd>8,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="zorza-potatoes">
                 <dt>Zorza con patatas</dt>
                 <dd>7,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="raxo-potatoes">
                 <dt>Raxo con patatas</dt>
                 <dd>8,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="eggs-potatoes-chorizo">
                 <dt>Huevos, patatas y chorizo</dt>
                 <dd>5,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="eggs-potatoes-ham">
                 <dt>Huevos, patatas y jamón</dt>
                 <dd>5,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="tomato-tuna-belly">
                 <dt>Tomate con ventresca</dt>
                 <dd>8,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="cold-cuts-board">
                 <dt>Tabla de embutido y queso</dt>
                 <dd>10,00&nbsp;€</dd>
               </div>
@@ -927,17 +940,17 @@
               <h3 class="menu-step__title">Sándwiches</h3>
             </div>
             <dl class="price-list price-list--large">
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="sandwich-ham-cheese">
                 <dt>Mixto</dt>
                 <dd>3,50&nbsp;€</dd>
                 <dd class="price-list__desc">Jamón york y queso.</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="sandwich-veggie">
                 <dt>Vegetal</dt>
                 <dd>4,50&nbsp;€</dd>
                 <dd class="price-list__desc">Lechuga, tomate, cebolla, atún, espárragos y huevo.</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="sandwich-chicken">
                 <dt>De pollo</dt>
                 <dd>5,50&nbsp;€</dd>
                 <dd class="price-list__desc">Pollo crujiente, lechuga, tomate, cebolla, jamón york y queso.</dd>
@@ -949,19 +962,19 @@
             </div>
             <h4 class="price-list__group">Bocadillos fríos</h4>
             <dl class="price-list price-list--large">
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-serrano-ham">
                 <dt>Jamón serrano</dt>
                 <dd>4,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-chorizo">
                 <dt>Chorizo</dt>
                 <dd>4,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-salchichon">
                 <dt>Salchichón</dt>
                 <dd>4,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-cheese">
                 <dt>Queso</dt>
                 <dd>4,50&nbsp;€</dd>
               </div>
@@ -969,19 +982,19 @@
 
             <h4 class="price-list__group">Bocadillos calientes</h4>
             <dl class="price-list price-list--large">
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-bacon">
                 <dt>Bacon</dt>
                 <dd>6,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-omelette">
                 <dt>Tortilla francesa</dt>
                 <dd>6,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-pork-loin">
                 <dt>Lomo fresco</dt>
                 <dd>6,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="roll-chicken-breast">
                 <dt>Pechuga de pollo</dt>
                 <dd>6,00&nbsp;€</dd>
               </div>
@@ -997,31 +1010,31 @@
               <h3 class="menu-step__title">Platos combinados</h3>
             </div>
             <dl class="price-list price-list--large price-list--numbered">
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-bacon-loin">
                 <dt>Bacon, lomo, patatas y huevos</dt>
                 <dd>8,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-beef-fillet">
                 <dt>Filete de ternera, patatas y ensalada</dt>
                 <dd>10,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-chicken-breast">
                 <dt>Pechuga de pollo, patatas y ensalada</dt>
                 <dd>8,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-fried-squid">
                 <dt>Calamares fritos, patatas y ensalada</dt>
                 <dd>8,50&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-pork-chop">
                 <dt>Chuleta de cerdo, patatas y ensalada</dt>
                 <dd>9,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-beef-chop">
                 <dt>Chuleta de ternera, patatas y ensalada</dt>
                 <dd>15,00&nbsp;€</dd>
               </div>
-              <div class="price-list__row">
+              <div class="price-list__row" data-dish="combo-mixed-grill">
                 <dt>Panceta, hamburguesa, salchicha, huevos y patatas</dt>
                 <dd>9,00&nbsp;€</dd>
               </div>
@@ -1034,30 +1047,30 @@
               <p class="menu-step__note">El broche perfecto</p>
             </div>
             <ul class="dish-grid" role="list" data-reveal-group>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="dessert-homemade">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/dessert-postre-casero.avif">
-                  <img src="assets/img/dessert-postre-casero.webp" alt="Porción de tarta casera de chocolate" width="250" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/dessert-postre-casero.avif?v=20261028">
+                  <img src="assets/img/dessert-postre-casero.webp?v=20261028" alt="Porción de tarta casera con frutos rojos" width="250" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <h4 class="dish-card__title">Postre casero</h4>
                   <p class="dish-card__price">3,50&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="dessert-ice-cream-cake">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/dessert-tarta-helada.avif">
-                  <img src="assets/img/dessert-tarta-helada.webp" alt="Porción de tarta helada con sirope de chocolate" width="250" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/dessert-tarta-helada.avif?v=20261028">
+                  <img src="assets/img/dessert-tarta-helada.webp?v=20261028" alt="Copa de helado con sirope de chocolate" width="250" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <h4 class="dish-card__title">Tarta helada</h4>
                   <p class="dish-card__price">2,00&nbsp;€</p>
                 </div>
               </li>
-              <li class="dish-card" data-reveal>
+              <li class="dish-card" data-reveal data-dish="dessert-fruit">
                 <picture class="dish-card__media">
-                  <source type="image/avif" srcset="assets/img/dessert-fruta.avif">
-                  <img src="assets/img/dessert-fruta.webp" alt="Cuenco de fruta fresca troceada" width="250" height="230" loading="lazy" decoding="async">
+                  <source type="image/avif" srcset="assets/img/dessert-fruta.avif?v=20261028">
+                  <img src="assets/img/dessert-fruta.webp?v=20261028" alt="Cuenco de fruta fresca troceada con fresas" width="250" height="230" loading="lazy" decoding="async">
                 </picture>
                 <div class="dish-card__body">
                   <h4 class="dish-card__title">Fruta</h4>
@@ -1228,21 +1241,147 @@
       </div>
     </section>
 
-    <section class="section takeaway" aria-labelledby="takeaway-title">
-      <div class="container takeaway__inner" data-reveal>
-        <div class="takeaway__icons" aria-hidden="true">
-          <svg class="icon icon--xl"><use href="#icon-bag"/></svg>
-          <svg class="icon icon--xl"><use href="#icon-bike"/></svg>
+    <section class="section order-section" id="pedidos" aria-labelledby="order-title">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Para llevar</p>
+          <h2 class="section-title" id="order-title">Pide y recoge</h2>
+          <p class="section-header__text">Elige tus platos, dinos a qué hora pasas y te abriremos WhatsApp con el pedido listo para enviar. Se paga al recogerlo en el local.</p>
+        </header>
+
+        <div class="order-status" data-order-status data-state="loading" role="status">
+          <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
+          <p data-order-status-text>Consultando el horario de pedidos…</p>
         </div>
-        <div class="takeaway__text">
-          <h2 class="section-title section-title--sm" id="takeaway-title">Para llevar y a domicilio</h2>
-          <p>Llámanos, haz tu pedido y pásate a recogerlo. ¿Prefieres no salir de casa? Repartimos en Verín con <strong>E.logo</strong>, el servicio de reparto local.</p>
+
+        <div class="order" data-order data-state="loading" aria-busy="true">
+          <div class="order__catalog">
+            <noscript>
+              <p class="form-card__noscript">Para pedir online necesitas JavaScript activado. También puedes llamarnos al <a href="tel:+34629255311">629&nbsp;25&nbsp;53&nbsp;11</a>.</p>
+            </noscript>
+
+            <div class="order-filters" role="group" aria-label="Secciones de la carta" data-order-filters></div>
+
+            <div class="order__loading" data-order-view="loading">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton skeleton--short"></span>
+              <p class="visually-hidden">Cargando la carta…</p>
+            </div>
+
+            <div class="daily-note daily-note--error" data-order-view="error" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#icon-alert"/></svg>
+              <div>
+                <p data-order-error>No hemos podido cargar la carta para pedir.</p>
+                <button class="btn btn--ghost" type="button" data-order-retry>
+                  <svg class="icon" aria-hidden="true"><use href="#icon-refresh"/></svg>
+                  Reintentar
+                </button>
+              </div>
+            </div>
+
+            <ul class="order-items" id="order-items" role="list" data-order-view="ready" data-order-items hidden></ul>
+          </div>
+
+          <section class="order__cart cart" id="tu-pedido" aria-labelledby="cart-title" data-order-cart>
+            <div class="cart__head">
+              <h3 class="cart__title" id="cart-title" tabindex="-1">Tu pedido</h3>
+              <span class="cart__count" data-cart-count>0 platos</span>
+            </div>
+
+            <p class="cart__empty" data-cart-empty>
+              <svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg>
+              Aún no has añadido nada. Elige tus platos y pulsa «Añadir».
+            </p>
+            <ul class="cart__lines" role="list" data-cart-lines hidden></ul>
+            <p class="field__error cart__error" data-error-for="lines" role="alert"></p>
+            <div class="cart__total" data-cart-total-row hidden>
+              <span>Total</span>
+              <strong data-cart-total>0,00&nbsp;€</strong>
+            </div>
+            <button class="cart__clear" type="button" data-cart-clear hidden>Vaciar pedido</button>
+
+            <form class="form cart__form" data-order-form novalidate aria-describedby="order-required-note">
+              <p class="form__note" id="order-required-note">Los campos marcados con <span aria-hidden="true">*</span><span class="visually-hidden">asterisco</span> son obligatorios.</p>
+
+              <div class="form__summary" data-order-summary role="alert" tabindex="-1" hidden>
+                <svg class="icon" aria-hidden="true"><use href="#icon-alert"/></svg>
+                <p data-order-summary-text></p>
+              </div>
+
+              <div class="form__grid form__grid--single">
+                <div class="field">
+                  <label class="field__label" for="order-name">Nombre <span aria-hidden="true">*</span></label>
+                  <input class="field__input" id="order-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="order-name-error">
+                  <p class="field__error" id="order-name-error" data-error-for="name"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="order-phone">Teléfono <span aria-hidden="true">*</span></label>
+                  <input class="field__input" id="order-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="16" placeholder="600 000 000" aria-describedby="order-phone-error">
+                  <p class="field__error" id="order-phone-error" data-error-for="phone"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="order-time">Hora de recogida <span aria-hidden="true">*</span></label>
+                  <select class="field__input field__select" id="order-time" name="time" required disabled aria-describedby="order-time-hint order-time-error">
+                    <option value="">Consultando horas…</option>
+                  </select>
+                  <p class="field__hint" id="order-time-hint" data-pickup-hint aria-live="polite"></p>
+                  <p class="field__error" id="order-time-error" data-error-for="time"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="order-notes">Comentarios <span class="field__optional">(opcional)</span></label>
+                  <textarea class="field__input field__textarea" id="order-notes" name="notes" rows="2" maxlength="300" placeholder="Sin cebolla, suplemento de queso en el bocadillo…" aria-describedby="order-notes-counter"></textarea>
+                  <p class="field__hint field__counter" id="order-notes-counter" data-order-counter aria-live="polite">0 / 300</p>
+                </div>
+
+                <div class="field field--hp" aria-hidden="true">
+                  <label for="order-website">No rellenes este campo</label>
+                  <input id="order-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="field field--check">
+                  <input class="field__checkbox" id="order-privacy" name="privacy" type="checkbox" required aria-describedby="order-privacy-error">
+                  <label for="order-privacy">He leído y acepto la <a href="privacidad.html">política de privacidad</a>. <span aria-hidden="true">*</span></label>
+                  <p class="field__error" id="order-privacy-error" data-error-for="privacy"></p>
+                </div>
+              </div>
+
+              <button class="btn btn--primary btn--lg btn--block" type="submit" data-order-submit disabled>
+                <span class="btn__spinner" aria-hidden="true"></span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+                <span data-order-submit-label>Enviar pedido por WhatsApp</span>
+              </button>
+              <p class="cart__fineprint">Pagas en el local al recogerlo. El pedido queda confirmado cuando te respondamos por WhatsApp.</p>
+            </form>
+
+            <div class="form-success" data-order-success tabindex="-1" hidden>
+              <span class="form-success__icon" aria-hidden="true">
+                <svg class="icon icon--xl"><use href="#icon-check"/></svg>
+              </span>
+              <h3 class="form-success__title">¡Pedido preparado!</h3>
+              <p>Hemos abierto WhatsApp con tu pedido. Solo tienes que pulsar <strong>enviar</strong>. Te lo tendremos listo a las <strong data-order-success-time></strong>.</p>
+              <p class="form-success__fallback">¿No se ha abierto WhatsApp? <a href="#" data-order-whatsapp-link target="_blank" rel="noopener noreferrer">Ábrelo aquí</a> o llámanos al <a href="tel:+34629255311">629&nbsp;25&nbsp;53&nbsp;11</a>.</p>
+              <button class="btn btn--ghost" type="button" data-order-reset>Hacer otro pedido</button>
+            </div>
+          </section>
+
+          <p class="visually-hidden" data-order-live aria-live="polite"></p>
         </div>
-        <a class="btn btn--primary btn--lg" href="tel:+34629255311">
-          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-          Pedir&nbsp;por&nbsp;teléfono
-        </a>
+
+        <p class="order__delivery">
+          <svg class="icon" aria-hidden="true"><use href="#icon-bike"/></svg>
+          <span>¿Prefieres que te lo llevemos? Repartimos en Verín con <strong>E.logo</strong>: <a href="tel:+34629255311">llámanos al 629&nbsp;25&nbsp;53&nbsp;11</a>.</span>
+        </p>
       </div>
+
+      <a class="order-bar" href="#tu-pedido" data-order-bar hidden>
+        <svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg>
+        <span>Ver mi pedido · <span data-order-bar-count>0 platos</span></span>
+        <strong data-order-bar-total>0,00&nbsp;€</strong>
+      </a>
     </section>
 
     <section class="section contact" id="contacto" aria-labelledby="contact-title">
@@ -1397,7 +1536,7 @@
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
-        <img src="assets/img/logo-o-alambique.svg" alt="O Alambique" width="1196" height="820" loading="lazy" decoding="async">
+        <img src="assets/img/logo-o-alambique.svg?v=20261028" alt="O Alambique" width="1196" height="820" loading="lazy" decoding="async">
         <p class="site-footer__tagline">Buenos momentos, mejor compañía.</p>
         <ul class="social-links" role="list">
           <li>
@@ -1442,14 +1581,14 @@
       </button>
     </div>
     <picture>
-      <source type="image/avif" srcset="assets/img/carta-2-640.avif 640w, assets/img/carta-2-1024.avif 1024w" sizes="(min-width: 700px) 640px, 92vw">
-      <source type="image/webp" srcset="assets/img/carta-2-640.webp 640w, assets/img/carta-2-1024.webp 1024w" sizes="(min-width: 700px) 640px, 92vw">
-      <img class="dialog__image" src="assets/img/carta-2-640.jpg" alt="Carta de O Alambique: raciones, sándwiches, bocadillos fríos y calientes y platos combinados con sus precios" width="640" height="960" loading="lazy" decoding="async">
+      <source type="image/avif" srcset="assets/img/carta-2-640.avif?v=20261028 640w, assets/img/carta-2-1024.avif?v=20261028 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <source type="image/webp" srcset="assets/img/carta-2-640.webp?v=20261028 640w, assets/img/carta-2-1024.webp?v=20261028 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <img class="dialog__image" src="assets/img/carta-2-640.jpg?v=20261028" alt="Carta de O Alambique: raciones, sándwiches, bocadillos fríos y calientes y platos combinados con sus precios" width="640" height="960" loading="lazy" decoding="async">
     </picture>
     <picture>
-      <source type="image/avif" srcset="assets/img/carta-640.avif 640w, assets/img/carta-1024.avif 1024w" sizes="(min-width: 700px) 640px, 92vw">
-      <source type="image/webp" srcset="assets/img/carta-640.webp 640w, assets/img/carta-1024.webp 1024w" sizes="(min-width: 700px) 640px, 92vw">
-      <img class="dialog__image" src="assets/img/carta-640.jpg" alt="Carta de O Alambique: cinco hamburguesas a 7 euros, suplementos de carne y postres caseros" width="640" height="960" loading="lazy" decoding="async">
+      <source type="image/avif" srcset="assets/img/carta-640.avif?v=20261028 640w, assets/img/carta-1024.avif?v=20261028 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <source type="image/webp" srcset="assets/img/carta-640.webp?v=20261028 640w, assets/img/carta-1024.webp?v=20261028 1024w" sizes="(min-width: 700px) 640px, 92vw">
+      <img class="dialog__image" src="assets/img/carta-640.jpg?v=20261028" alt="Carta de O Alambique: cinco hamburguesas de 5 a 8 euros, cambios de carne y postres caseros" width="640" height="960" loading="lazy" decoding="async">
     </picture>
   </dialog>
 </body>

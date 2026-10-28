@@ -1,8 +1,9 @@
-import { BUSINESS, RESERVATION } from '../config.js';
-import { createElement, qs } from '../lib/dom.js';
-import { addDaysToIso, formatLongDate, getZonedNow, isValidIsoDate } from '../lib/time.js';
-import { getReservationSlots } from '../lib/schedule.js';
-import { normalizePhone, sanitizeText, validateReservation, validators } from '../lib/validators.js';
+import { BUSINESS, RESERVATION } from '../config.js?v=20261028';
+import { createElement, qs } from '../lib/dom.js?v=20261028';
+import { addDaysToIso, formatLongDate, getZonedNow, isValidIsoDate } from '../lib/time.js?v=20261028';
+import { getReservationSlots } from '../lib/schedule.js?v=20261028';
+import { normalizePhone, sanitizeText, validateReservation, validators } from '../lib/validators.js?v=20261028';
+import { buildWhatsappUrl as toWhatsappUrl, openInNewTab } from '../lib/whatsapp.js?v=20261028';
 
 const FIELD_LABELS = {
   name: 'Nombre',
@@ -149,7 +150,7 @@ export function initReservationForm() {
     if (notes) lines.push(`• Comentarios: ${notes}`);
     lines.push('', '¡Gracias!');
 
-    return `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+    return toWhatsappUrl(lines);
   };
 
   const showSuccess = (url, popupBlocked) => {
@@ -264,18 +265,4 @@ export function initReservationForm() {
   setDateLimits();
   renderTimeOptions();
   updateCounter();
-}
-
-// Abre primero una pestaña en blanco (mismo origen) para poder cortar window.opener antes de navegar
-function openInNewTab(url) {
-  try {
-    const popup = window.open('about:blank', '_blank');
-    if (!popup) return null;
-    popup.opener = null;
-    popup.location.replace(url);
-    return popup;
-  } catch (error) {
-    console.warn('[reservation-form] No se pudo abrir la pestaña', error);
-    return null;
-  }
 }

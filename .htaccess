@@ -21,8 +21,9 @@ ErrorDocument 404 /404.html
   RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
   RewriteRule ^index\.html$ / [L,R=301]
 
-  # Bloquear archivos que no deben ser públicos
-  RewriteRule (^|/)\. - [F]
+  # Bloquear archivos que no deben ser públicos (ocultos, .git…), salvo /.well-known/,
+  # que Hostinger necesita para renovar el certificado SSL automáticamente
+  RewriteRule (^|/)\.(?!well-known/) - [F]
   RewriteRule ^(README\.md|_headers)$ - [F]
 </IfModule>
 
@@ -37,12 +38,20 @@ ErrorDocument 404 /404.html
   Header unset X-Powered-By
   Header unset Server
 
-  # Caché: recursos estáticos 1 año; HTML y datos siempre revalidados
-  <FilesMatch "\.(avif|webp|jpg|png|svg|ico|woff2)$">
+  # Caché:
+  # - Fuentes: 1 año (no cambian nunca).
+  # - Imágenes: 1 día (si se sustituye una foto con el mismo nombre, se ve al día siguiente como tarde).
+  # - CSS y JS: el navegador pregunta siempre si hay versión nueva (si no la hay, responde 304 y no descarga nada).
+  #   Así, al publicar cambios nadie se queda con código viejo mezclado con el nuevo.
+  # - HTML y datos: siempre revalidados.
+  <FilesMatch "\.woff2$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  <FilesMatch "\.(avif|webp|jpg|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=604800"
+    Header set Cache-Control "no-cache"
   </FilesMatch>
   <FilesMatch "\.(html|json|xml|txt|webmanifest)$">
     Header set Cache-Control "no-cache"

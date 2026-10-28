@@ -1,0 +1,567 @@
+/* =========================================================
+   Pedidos para recoger + platos no disponibles en la carta
+   ========================================================= */
+
+/* ---------- Etiqueta «No disponible hoy» (carta y pedidos) ---------- */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: fit-content;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid rgb(255 138 117 / 0.5);
+  border-radius: var(--radius-pill);
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* En las listas de precios la etiqueta va en su propia línea, bajo el plato */
+.price-list .availability-badge {
+  order: 4;
+  margin-top: 0.25rem;
+  color: var(--color-danger);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.price-list__row.is-unavailable > dt,
+.price-list__row.is-unavailable > dd:not(.availability-badge),
+.dish-card.is-unavailable .dish-card__title,
+.dish-card.is-unavailable .dish-card__price {
+  opacity: 0.55;
+}
+
+.price-list__row.is-unavailable > dd:not(.availability-badge, .price-list__desc) {
+  text-decoration: line-through;
+}
+
+.dish-card.is-unavailable .dish-card__media img {
+  filter: grayscale(0.85);
+  opacity: 0.6;
+}
+
+.dish-card .availability-badge {
+  margin-top: var(--space-xs);
+}
+
+/* ---------- Aviso del horario de pedidos ---------- */
+.order-status {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  max-width: 46rem;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-m) var(--space-l);
+  border: 1px solid rgb(143 209 158 / 0.4);
+  border-radius: var(--radius-m);
+  background: var(--color-success-soft);
+}
+
+.order-status .icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--color-success);
+}
+
+.order-status[data-state="loading"] {
+  border-color: var(--color-line);
+  background: var(--color-surface);
+}
+
+.order-status[data-state="loading"] .icon {
+  color: var(--color-text-muted);
+}
+
+.order-status[data-state="closed"],
+.order-status[data-state="paused"] {
+  border-color: rgb(242 193 78 / 0.45);
+  background: rgb(242 193 78 / 0.1);
+}
+
+.order-status[data-state="closed"] .icon,
+.order-status[data-state="paused"] .icon {
+  color: var(--color-warning);
+}
+
+/* ---------- Distribución ---------- */
+.order {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.order > * {
+  min-width: 0;
+}
+
+.order__loading {
+  padding: var(--space-l);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+}
+
+.order__loading .skeleton {
+  height: 3.5rem;
+}
+
+/* ---------- Filtros por sección ---------- */
+.order-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-l);
+}
+
+.order-filters:empty {
+  display: none;
+}
+
+.order-filter {
+  min-height: 2.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.order-filter:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.order-filter[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* ---------- Platos para pedir ---------- */
+.order-items {
+  display: grid;
+  gap: var(--space-s);
+}
+
+.order-items__note {
+  padding: var(--space-s) var(--space-m);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  background: var(--color-accent-soft);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-s) var(--space-m);
+  align-items: center;
+  padding: var(--space-m);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  animation: fade-up var(--duration) var(--ease-out) both;
+}
+
+.order-item.is-unavailable {
+  border-style: dashed;
+  background: transparent;
+}
+
+.order-item.is-unavailable .order-item__name,
+.order-item.is-unavailable .order-item__desc,
+.order-item.is-unavailable .order-item__price {
+  opacity: 0.55;
+}
+
+.order-item__info {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.order-item__name {
+  font-family: var(--font-body);
+  font-size: var(--fs-400);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.order-item__desc {
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+  line-height: 1.45;
+}
+
+.order-item__tip {
+  color: var(--color-accent);
+  font-size: var(--fs-300);
+  font-style: italic;
+}
+
+.order-item__price {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-500);
+  font-weight: 600;
+}
+
+.order-item__in-cart {
+  color: var(--color-success);
+  font-size: var(--fs-300);
+  font-weight: 600;
+}
+
+/* El selector de carne ocupa toda la fila, debajo del nombre */
+/* El selector de carne va debajo de la información, en la columna izquierda */
+.order-item__option {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.order-item__select {
+  min-height: 2.75rem;
+  padding-block: 0.4rem;
+  font-size: var(--fs-400);
+}
+
+.order-item__add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, scale var(--duration-fast) ease;
+}
+
+/* Con selector de carne, el botón ocupa también la fila de abajo y queda centrado en toda la tarjeta */
+.order-item.has-option .order-item__add {
+  grid-row: 1 / span 2;
+}
+
+.order-item__add:hover {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.order-item__add:active {
+  scale: 0.94;
+}
+
+.order-item__add:disabled {
+  border-color: var(--color-line-strong);
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ---------- Tu pedido ---------- */
+.cart {
+  padding: var(--space-m) var(--space-l) var(--space-l);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  scroll-margin-top: calc(var(--header-height) + var(--space-m));
+}
+
+.cart__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.cart__title {
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+}
+
+.cart__title:focus {
+  outline: none;
+}
+
+.cart__count {
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.cart__empty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  padding-block: var(--space-m);
+  font-size: var(--fs-300);
+  color: var(--color-text-muted);
+}
+
+.cart__empty .icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.cart__lines {
+  display: grid;
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2xs) var(--space-s);
+  align-items: center;
+  padding-block: var(--space-xs);
+  font-size: var(--fs-300);
+  border-bottom: 1px solid var(--color-line);
+  animation: fade-up var(--duration) var(--ease-out) both;
+}
+
+.cart-line__info {
+  grid-column: 1 / -1;
+}
+
+.cart-line__name {
+  font-weight: 600;
+}
+
+.cart-line__meta {
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+}
+
+.cart-line__qty {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: var(--space-2xs);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+}
+
+.cart-line__button {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.cart-line__button:hover {
+  background: var(--color-accent-soft);
+}
+
+.cart-line__button:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.cart-line__button .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.cart-line__count {
+  min-width: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: center;
+}
+
+.cart-line__total {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: end;
+}
+
+.cart__error {
+  margin-top: var(--space-s);
+}
+
+.cart__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: var(--space-s) var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+}
+
+.cart__total strong {
+  color: var(--color-accent);
+}
+
+.cart__clear {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.cart__clear:hover {
+  color: var(--color-danger);
+}
+
+.cart__form {
+  margin-top: var(--space-m);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--color-line);
+}
+
+/* Formulario del pedido: mismos campos que en reservas, pero más apretados */
+.cart__form .form__note {
+  margin-bottom: var(--space-s);
+}
+
+.cart__form .form__summary {
+  margin-bottom: var(--space-m);
+  padding: var(--space-s);
+  font-size: var(--fs-300);
+}
+
+.form__grid--single {
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.cart__form .field__label {
+  font-size: var(--fs-300);
+}
+
+.cart__form .field__input {
+  min-height: 2.75rem;
+  padding-block: 0.5rem;
+}
+
+.cart__form .field__textarea {
+  min-height: 4.5rem;
+}
+
+.cart__form .btn--lg {
+  min-height: 2.75rem;
+  font-size: 0.875rem;
+}
+
+.cart__fineprint {
+  margin-top: var(--space-s);
+  color: var(--color-text-muted);
+  font-size: var(--fs-300);
+  text-align: center;
+}
+
+/* ---------- Reparto a domicilio ---------- */
+.order__delivery {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  max-width: 46rem;
+  margin: var(--space-2xl) auto 0;
+  color: var(--color-text-muted);
+}
+
+.order__delivery .icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+/* ---------- Barra flotante «Ver mi pedido» (solo móvil) ---------- */
+.order-bar {
+  position: fixed;
+  inset: auto var(--space-m) calc(var(--space-m) + env(safe-area-inset-bottom)) var(--space-m);
+  z-index: var(--z-header);
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  box-shadow: 0 12px 30px -8px rgb(0 0 0 / 0.7);
+  color: var(--color-on-accent);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  animation: fade-up var(--duration) var(--ease-out) both;
+}
+
+.order-bar:hover {
+  color: var(--color-on-accent);
+}
+
+.order-bar strong {
+  margin-inline-start: auto;
+}
+
+@media (min-width: 40em) {
+
+  .order-item__option {
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 60em) {
+  /* La carta ocupa el espacio y el pedido es una columna estrecha a la derecha */
+  .order {
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
+    gap: var(--space-xl);
+  }
+
+  /* El pedido acompaña al usuario mientras recorre la lista */
+  .order__cart {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-m));
+    max-height: calc(100svh - var(--header-height) - var(--space-xl));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .order-bar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-item,
+  .cart-line,
+  .order-bar {
+    animation: none;
+  }
+}

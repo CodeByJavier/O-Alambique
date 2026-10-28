@@ -40,3 +40,21 @@ export const DAILY_MENU = Object.freeze({
 });
 
 export const CLOSING_SOON_MINUTES = 45;
+
+// Pedidos para recoger en el local (solo para el mismo día).
+// Las franjas se recortan con OPENING_HOURS: los días que el local cierra no hay pedidos.
+export const ORDER = Object.freeze({
+  catalogUrl: new URL('../data/menu.json', import.meta.url).href,
+  // La escribe el panel privado /gestion/ (platos agotados y pedidos activados o no)
+  availabilityUrl: new URL('../data/availability.json', import.meta.url).href,
+  timeoutMs: 8000,
+  pickupWindows: Object.freeze([
+    Object.freeze({ start: '13:30', end: '15:30' }),
+    Object.freeze({ start: '20:30', end: '22:30' }),
+  ]),
+  slotStepMinutes: 15,
+  minNoticeMinutes: 30,
+  maxQuantityPerLine: 20,
+  maxLines: 30,
+  storageKey: 'o-alambique-order-v1',
+});
